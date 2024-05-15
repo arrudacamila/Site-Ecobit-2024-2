@@ -1,0 +1,169 @@
+.ProductForm {
+    padding: 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: #25861c;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+.title {
+    color: #fff;
+    text-align: center;
+    margin: 0;
+
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddfe2;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.input-field-container {
+    display: inline-block;
+    width: calc(50% - 5px);
+    margin-right: 10px;
+}
+
+.input-field-container:last-child {
+    margin-right: 0;
+}
+
+.submit-btn {
+    width: 50%;
+    /* Define a largura como 50% */
+    padding: 8px;
+    /* Reduz o preenchimento */
+    border: none;
+    border-radius: 5px;
+    background-color: #195813;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    margin-left: auto;
+    /* Centraliza horizontalmente */
+    margin-right: auto;
+    /* Centraliza horizontalmente */
+    display: block;
+    /* Torna-o um bloco para aplicar as margens automáticas */
+}
+
+.submit-btn:hover {
+    background-color: #25861c;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddfe2;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+/* Estilizar o texto de placeholder */
+select::-webkit-input-placeholder,
+input[type="number"]::-webkit-input-placeholder {
+    color: #6c757d;
+}
+
+select:-ms-input-placeholder,
+input[type="number"]:-ms-input-placeholder {
+    color: #6c757d;
+}
+
+select::placeholder,
+input[type="number"]::placeholder {
+    color: #6c757d;
+}
+
+#descricao {
+    width: 100;
+    height: 200px;
+    overflow: auto;
+    resize: none;
+
+}
+
+
+.image-preview {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.preview-image {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.remove-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+/* Oculta o nome do arquivo no input de arquivo */
+input[type="file"] {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Estilização do botão de inserção de imagem */
+.input-file-button {
+    background-color: #4CAF50; /* Verde */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-radius: 25px; /* Arredondado */
+}
+
+/* Oculta o nome do arquivo no input de arquivo */
+.input-file {
+    display: none;
+}
+
+h2{
+    font-size: 20px;
+}
+
+.input-file-button.disabled {
+    background-color: #ccc; /* Cinza */
+    cursor: not-allowed;
+}
+
