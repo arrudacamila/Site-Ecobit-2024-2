@@ -30,7 +30,7 @@ function EcoNav() {
                 <NavLink to="/Ecopontos" className="nav-link" activeClassName="active">Ecopontos</NavLink>
               </Nav.Item>
               <Nav.Item>
-                <NavLink to="/Register" className="nav-link" activeClassName="active">Cadastre-se</NavLink>
+                <NavLink to="/Register2" className="nav-link" activeClassName="active">Cadastre-se</NavLink>
               </Nav.Item>
             </Nav>
           </Nav>
