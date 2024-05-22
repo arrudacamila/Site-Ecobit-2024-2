@@ -1,0 +1,29 @@
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.headers {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinha o texto à direita */
+    text-align: right; /* Garante que o texto fique alinhado à direita */
+    margin-bottom: 20px;
+    width: 100%; /* Garante que o header ocupe a largura total do container */
+    padding: 20px; /* Adiciona algum espaçamento ao redor do texto */
+    background: linear-gradient(to right, transparent, #b6a175); /* Gradiente da esquerda para a direita */
+    border-radius: 10px; /* Bordas arredondadas para um visual moderno */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    animation: slideIn 1.5s ease-out; /* Animação de deslize e surgimento */
+}
+
+.headers p {
+    font-size: 1.5rem; /* Aumenta o tamanho do parágrafo */
+    color: #ffffff; /* Cor do texto */
+}
