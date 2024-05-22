@@ -7,7 +7,8 @@ import UserDonations from "./components/UserProfile/UserDonations"; // Importe o
 import Eco_Detalhes from "./pages/Eco_Detalhes/Eco_Detalhes";
 import ProductForm from "./pages/ProductForm/ProductForm";
 import Register from "./pages/Register/Register"
-import Ecopontos2 from "./pages/Ecopontos/Ecopontos";
+import Ecopontos from "./pages/Ecopontos/Ecopontos";
+import Prod_Detalhes from "./pages/Prod_Detalhes/Prod_Detalhes";
 
 function AppRoutes() {
     return (
@@ -21,7 +22,8 @@ function AppRoutes() {
                 <Route path="/Eco_Detalhes" element={<Eco_Detalhes />} />
                 <Route path="/ProductForm" element={<ProductForm />}></Route>
                 <Route path="/Register" element={<Register />} />
-                <Route path="/Ecopontos2" element={<Ecopontos2 />} />
+                <Route path="/Ecopontos" element={<Ecopontos />} />
+                <Route path="/Prod_Detalhes" element={<Prod_Detalhes />}></Route>
             </Routes>
         </BrowserRouter>
     );

@@ -17,7 +17,7 @@ function Donation() {
                         <img src="src\img\fonte.jpg" alt="" />
                         <h2>Fonte PowerOne</h2>
                         <p>Usado</p>
-                        <NavLink  to="/Product_Detalhes" className='NavLink' >Detalhes</NavLink>
+                        <NavLink  to="/Prod_Detalhes" className='NavLink' >Detalhes</NavLink>
                     </div>
                 </div>
                 

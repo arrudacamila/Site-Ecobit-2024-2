@@ -1,0 +1,56 @@
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px; /* Ajuste conforme necessário */
+    margin: 20px auto; /* Centraliza o cartão horizontalmente */
+    background-color: #fff;
+}
+
+.card-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* Espaço entre o carrossel e o texto */
+}
+
+.carousel-container {
+    flex-shrink: 0; /* Impede que o contêiner do carrossel encolha */
+    width: 300px; /* Define a nova largura do carrossel */
+    height: 300px; /* Define a nova altura do carrossel */
+    overflow: hidden; /* Esconde qualquer parte da imagem que ultrapasse o contêiner */
+    border-radius: 8px; /* Ajuste conforme necessário */
+}
+
+.carousel-container .carousel .slide {
+    width: 300px; /* Garante que cada slide tem a mesma largura do contêiner */
+    height: 300px; /* Garante que cada slide tem a mesma altura do contêiner */
+}
+
+.carousel-container .carousel .slide img {
+    width: 300px; /* Ajuste para a nova largura */
+    height: 300px; /* Ajuste para a nova altura */
+    object-fit: cover; /* Garante que a imagem cubra todo o contêiner mantendo a proporção */
+}
+
+.text-container {
+    flex-grow: 1; /* Permite que o contêiner de texto ocupe o espaço restante */
+    max-width: calc(100% - 340px); /* Ajusta conforme a largura do carrossel e gap */
+}
+
+.text-container h1 {
+    margin-top: 0;
+}
+
+.text-container p {
+    margin: 10px 0;
+}
+
+.text-container i {
+    margin-right: 5px;
+    color: rgb(9, 255, 0);
+}
+
+.Prod_Detalhes{
+    padding-bottom: 10px;
+}

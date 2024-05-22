@@ -25,7 +25,7 @@ function EcoNav() {
                 <NavLink to="/" className="nav-link" activeClassName="active" exact>Home</NavLink>
               </Nav.Item>
               <Nav.Item>
-                <NavLink to="/Ecopontos2" className="nav-link" activeClassName="active">Ecopontos</NavLink>
+                <NavLink to="/Ecopontos" className="nav-link" activeClassName="active">Ecopontos</NavLink>
               </Nav.Item>
               <Nav.Item>
                 <NavLink to="/Register" className="nav-link" activeClassName="active">Cadastre-se</NavLink>

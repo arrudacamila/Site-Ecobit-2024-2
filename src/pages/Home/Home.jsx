@@ -2,6 +2,8 @@ import EcoNav from "../../components/Navbar/Navbar.jsx";
 import "./Home.css";
 import Button from "../../components/HOME/Button/Button.jsx";
 import Icon from "../../components/HOME/Icons/Icons.jsx";
+import FloatingButton from "../../components/FloatingButton/FloatingButton.jsx";
+
 function Home() {
   return (
     <div className="Home">
@@ -86,6 +88,7 @@ function Home() {
             </p>
           </div>
         </div>
+        <FloatingButton/>
       </section>
     </div>
   );

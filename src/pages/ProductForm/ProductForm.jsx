@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import EcoNav from "../../components/Navbar/Navbar.jsx";
 import "./ProductForm.css";
+import { FaCheckCircle } from 'react-icons/fa';
 
 function ProductForm() {
     const [images, setImages] = useState([]);
     const [quantidade, setQuantidade] = useState('');
+    const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+    const [titulo, setTitulo] = useState(''); // Adicionando estado para o título
+    const [descricao, setDescricao] = useState('');
+    const [categoria, setCategoria] = useState('');
+    const [condicao, setCondicao] = useState('');
+    const [disponibilidade, setDisponibilidade] = useState('');
 
     function handleImageChange(event) {
         const fileList = event.target.files;
@@ -39,6 +46,41 @@ function ProductForm() {
         }
     }
 
+    function handleTituloChange(event) { // Função para lidar com alterações no título
+        setTitulo(event.target.value);
+    }
+
+    function handleDescricaoChange(event) { // Função para lidar com alterações na descrição
+        setDescricao(event.target.value);
+    }
+
+    function handleCategoriaChange(event) {
+        setCategoria(event.target.value);
+    }
+
+    function handleCondicaoChange(event) {
+        setCondicao(event.target.value);
+    }
+
+    function handleDisponibilidadeChange(event) {
+        setDisponibilidade(event.target.value);
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        setShowConfirmationModal(true);
+        setTimeout(() => {
+            setShowConfirmationModal(false);
+            setImages([]);
+            setQuantidade('');
+            setTitulo('');
+            setDescricao('');
+            setCategoria('');
+            setCondicao('');
+            setDisponibilidade('');
+        }, 2000);
+    }
+
     return (
         <div>
             <EcoNav />
@@ -48,7 +90,7 @@ function ProductForm() {
                         <h1 className="ProductForm-forms-title">Novo Produto</h1>
                     </div>
                     <br />
-                    <form action="">
+                    <form onSubmit={handleSubmit}>
                         <div className="ProductForm-forms-form">
                             <h2>Selecione até 5 fotos</h2>
                             <label className={`ProductForm-forms-input-file-button ${handleButtonDisabled ? 'disabled' : ''}`}>
@@ -65,15 +107,15 @@ function ProductForm() {
                         </div>
                         <br />
                         <div className="ProductForm-forms-form-group">
-                            <input type="text" id="titulo" className="ProductForm-forms-input-field" placeholder="Título" />
+                            <input type="text" id="titulo" className="ProductForm-forms-input-field" placeholder="Título" value={titulo} onChange={handleTituloChange} />
                         </div>
                         <div className="ProductForm-forms-form-group">
                             <div className="ProductForm-forms-input-field-container">
                                 <input type="number" id="quantidade" className="ProductForm-forms-input-field" placeholder="Quantidade" required min="1" value={quantidade} onInput={handleQuantidadeChange} />
                             </div>
                             <div className="ProductForm-forms-input-field-container">
-                                <select name="categoria" id="categoria" className="ProductForm-forms-input-field" required>
-                                    <option value="" disabled selected hidden>Categoria</option>
+                                <select name="categoria" id="categoria" className="ProductForm-forms-input-field" required value={categoria} onChange={handleCategoriaChange}>
+                                    <option value="" disabled>Categoria</option>
                                     <option value="0">Móvel</option>
                                     <option value="1">Roupa</option>
                                     <option value="2">Eletrônico</option>
@@ -82,8 +124,8 @@ function ProductForm() {
                             </div>
                         </div>
                         <div className="ProductForm-forms-form-group">
-                            <select name="condicao" id="condicao" className="ProductForm-forms-input-field" required>
-                                <option value="" disabled selected hidden>Condição</option>
+                            <select name="condicao" id="condicao" className="ProductForm-forms-input-field" required value={condicao} onChange={handleCondicaoChange}>
+                                <option value="" disabled>Condição</option>
                                 <option value="0">Novo</option>
                                 <option value="1">Usado - estado de novo</option>
                                 <option value="2">Usado - em boas condições</option>
@@ -92,20 +134,31 @@ function ProductForm() {
                         </div>
                         <div className="ProductForm-forms-form-group">
                             <label htmlFor="disponibilidade">Tem disponibilidade para levar até o interessado?</label>
-                            <select name="disponibilidade" id="disponibilidade" className="ProductForm-forms-input-field" required>
+                            <select name="disponibilidade" id="disponibilidade" className="ProductForm-forms-input-field" required value={disponibilidade} onChange={handleDisponibilidadeChange}>
+                                <option value="">Selecione</option>
                                 <option value="0">Sim</option>
                                 <option value="1">Não</option>
                             </select>
                         </div>
                         <div className="ProductForm-forms-form-group">
-                            <textarea type="text" id="descricao" className="ProductForm-forms-input-field" placeholder="Descricao" />
+                            <textarea type="text" id="descricao" className="ProductForm-forms-input-field" placeholder="Descricao" value={descricao} onChange={handleDescricaoChange} />
                         </div>
                         <input type="submit" value="Enviar" className="ProductForm-forms-submit-btn" />
                     </form>
                 </div>
             </div>
+            {/* Modal de confirmação */}
+            {showConfirmationModal && (
+                <div className="modal active">
+                    <div className="modal-content">
+                        <FaCheckCircle className="modal-icon" />
+                        <p>Formulário enviado com sucesso!</p>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
 
 export default ProductForm;
+

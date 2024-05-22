@@ -166,3 +166,49 @@ h2 {
     background-color: #ccc; /* Cinza */
     cursor: not-allowed;
 }
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Começa invisível */
+    pointer-events: none; /* Não é clicável enquanto estiver invisível */
+    transition: opacity 0.3s ease-in-out; /* Transição suave de opacidade */
+}
+
+.modal-content {
+    background-color: #fff; /* Fundo branco */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal p {
+    margin: 0;
+}
+
+.modal.active {
+    opacity: 1; /* Torna-se visível */
+    pointer-events: auto; /* Torna-se clicável */
+}
+
+.modal.active .modal-content {
+    transform: scale(1); /* Animação de escala para aparecer suavemente */
+}
+
+.modal-icon {
+    font-size: 48px;
+    color: #4CAF50; /* Cor verde para o ícone de certo */
+    margin-bottom: 20px;
+}
+
