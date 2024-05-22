@@ -1,0 +1,168 @@
+.ProductForm-forms {
+    padding: 20px;
+}
+
+.ProductForm-forms-container {
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    padding: 20px;
+}
+
+.ProductForm-forms-header {
+    background-color: #25861c;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+.ProductForm-forms-title {
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+
+.ProductForm-forms-form-group {
+    margin-bottom: 20px;
+}
+
+.ProductForm-forms-input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddfe2;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.ProductForm-forms-input-field-container {
+    display: inline-block;
+    width: calc(50% - 5px);
+    margin-right: 10px;
+}
+
+.ProductForm-forms-input-field-container:last-child {
+    margin-right: 0;
+}
+
+.ProductForm-forms-submit-btn {
+    width: 50%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #195813;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.ProductForm-forms-submit-btn:hover {
+    background-color: #25861c;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddfe2;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+/* Estilizar o texto de placeholder */
+select::-webkit-input-placeholder,
+input[type="number"]::-webkit-input-placeholder {
+    color: #6c757d;
+}
+
+select:-ms-input-placeholder,
+input[type="number"]:-ms-input-placeholder {
+    color: #6c757d;
+}
+
+select::placeholder,
+input[type="number"]::placeholder {
+    color: #6c757d;
+}
+
+#descricao {
+    width: 100%;
+    height: 200px;
+    overflow: auto;
+    resize: none;
+}
+
+.ProductForm-forms-image-preview {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.ProductForm-forms-preview-image {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.ProductForm-forms-remove-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ProductForm-forms-remove-button:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+/* Oculta o nome do arquivo no input de arquivo */
+input[type="file"] {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Estilização do botão de inserção de imagem */
+.ProductForm-forms-input-file-button {
+    background-color: #4CAF50; /* Verde */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    border-radius: 25px; /* Arredondado */
+}
+
+/* Oculta o nome do arquivo no input de arquivo */
+.ProductForm-forms-input-file {
+    display: none;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.ProductForm-forms-input-file-button.disabled {
+    background-color: #ccc; /* Cinza */
+    cursor: not-allowed;
+}
