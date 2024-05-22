@@ -4,11 +4,13 @@
 }
 
 .all_content{
-    background-color: #fffafa;
-    margin: 20px;
-    border-radius: 20px;
-    padding-bottom: 20px;
-    padding-top: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
 }
 
 .saturday{

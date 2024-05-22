@@ -2,6 +2,7 @@ import { useState } from 'react';
 import "./Ecopontos.css";
 import Ecopontos from '../../components/Ecopontos/Ecopontos.jsx';
 import EcoNav from '../../components/Navbar/Navbar.jsx'
+import "../../components/Header/header.css"
 
 function Home() {
   const [todos, setTodos] = useState([
@@ -110,20 +111,22 @@ function Home() {
   ]);
 
   return (
-    <div className="Ecopontos">
+    <div>
       <EcoNav />
-      <h1>Ecopontos</h1>
-      <div className="eco-grid">
-        {todos.map((ecopoint, index) => (
-          <div key={index} className="eco-item">
-            <Ecopontos ecopoint={ecopoint} />
-          </div>
-        ))}
-        
+      <div className="Ecopontos">
+        <div className='headers'>
+          <h1 className='titles'>Ecopontos</h1>
+          <p>Procurando onde descartar?</p>
+        </div>
+        <div className="eco-grid">
+          {todos.map((ecopoint, index) => (
+            <div key={index} className="eco-item">
+              <Ecopontos ecopoint={ecopoint} />
+            </div>
+          ))}
+        </div>
       </div>
-      
     </div>
-
 
   )
 }

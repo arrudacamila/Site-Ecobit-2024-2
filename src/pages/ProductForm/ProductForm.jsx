@@ -42,37 +42,37 @@ function ProductForm() {
     return (
         <div>
             <EcoNav />
-            <div className="ProductForm">
-                <div className="container">
-                    <div className="header">
-                        <h1 className="title">Novo Produto</h1>
+            <div className="ProductForm-forms">
+                <div className="ProductForm-forms-container">
+                    <div className="ProductForm-forms-header">
+                        <h1 className="ProductForm-forms-title">Novo Produto</h1>
                     </div>
                     <br />
                     <form action="">
-                        <div className="form-group">
+                        <div className="ProductForm-forms-form">
                             <h2>Selecione até 5 fotos</h2>
-                            <label className={`input-file-button ${handleButtonDisabled ? 'disabled' : ''}`}>
+                            <label className={`ProductForm-forms-input-file-button ${handleButtonDisabled ? 'disabled' : ''}`}>
                                 <span>Escolher Imagens</span>
-                                <input type="file" accept="image/*" id="images" multiple onChange={handleImageChange} className="input-file" disabled={handleButtonDisabled} />
+                                <input type="file" accept="image/*" id="images" multiple onChange={handleImageChange} className="ProductForm-forms-input-file" disabled={handleButtonDisabled} />
                             </label>
                             <br />
                             {images.map(image => (
-                                <div key={image.id} className="image-preview">
-                                    <img src={image.src} alt="Imagem" className="preview-image" />
-                                    <button type="button" onClick={() => removeImage(image.id)} className="remove-button">X</button>
+                                <div key={image.id} className="ProductForm-forms-image-preview">
+                                    <img src={image.src} alt="Imagem" className="ProductForm-forms-preview-image" />
+                                    <button type="button" onClick={() => removeImage(image.id)} className="ProductForm-forms-remove-button">X</button>
                                 </div>
                             ))}
                         </div>
                         <br />
-                        <div className="form-group">
-                            <input type="text" id="titulo" className="input-field" placeholder="Título" />
+                        <div className="ProductForm-forms-form-group">
+                            <input type="text" id="titulo" className="ProductForm-forms-input-field" placeholder="Título" />
                         </div>
-                        <div className="form-group">
-                            <div className="input-field-container">
-                                <input type="number" id="quantidade" className="input-field" placeholder="Quantidade" required min="1" value={quantidade} onInput={handleQuantidadeChange} />
+                        <div className="ProductForm-forms-form-group">
+                            <div className="ProductForm-forms-input-field-container">
+                                <input type="number" id="quantidade" className="ProductForm-forms-input-field" placeholder="Quantidade" required min="1" value={quantidade} onInput={handleQuantidadeChange} />
                             </div>
-                            <div className="input-field-container">
-                                <select name="categoria" id="categoria" className="input-field" required>
+                            <div className="ProductForm-forms-input-field-container">
+                                <select name="categoria" id="categoria" className="ProductForm-forms-input-field" required>
                                     <option value="" disabled selected hidden>Categoria</option>
                                     <option value="0">Móvel</option>
                                     <option value="1">Roupa</option>
@@ -81,8 +81,8 @@ function ProductForm() {
                                 </select>
                             </div>
                         </div>
-                        <div className="form-group">
-                            <select name="condicao" id="condicao" className="input-field" required>
+                        <div className="ProductForm-forms-form-group">
+                            <select name="condicao" id="condicao" className="ProductForm-forms-input-field" required>
                                 <option value="" disabled selected hidden>Condição</option>
                                 <option value="0">Novo</option>
                                 <option value="1">Usado - estado de novo</option>
@@ -90,17 +90,17 @@ function ProductForm() {
                                 <option value="3">Usado - em condições razoáveis</option>
                             </select>
                         </div>
-                        <div className="form-group">
+                        <div className="ProductForm-forms-form-group">
                             <label htmlFor="disponibilidade">Tem disponibilidade para levar até o interessado?</label>
-                            <select name="disponibilidade" id="disponibilidade" className="input-field" required>
+                            <select name="disponibilidade" id="disponibilidade" className="ProductForm-forms-input-field" required>
                                 <option value="0">Sim</option>
                                 <option value="1">Não</option>
                             </select>
                         </div>
-                        <div className="form-group">
-                            <textarea type="text" id="descricao" className="input-field" placeholder="Descricao" />
+                        <div className="ProductForm-forms-form-group">
+                            <textarea type="text" id="descricao" className="ProductForm-forms-input-field" placeholder="Descricao" />
                         </div>
-                        <input type="submit" value="Enviar" className="submit-btn" />
+                        <input type="submit" value="Enviar" className="ProductForm-forms-submit-btn" />
                     </form>
                 </div>
             </div>

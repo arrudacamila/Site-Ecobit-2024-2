@@ -81,10 +81,10 @@ function Register2() {
                                 <a href="#" className="icon"><i className="fab fa-linkedin-in"></i></a>
                             </div>
                             <span>ou cadastre email e senha</span>
-                            <input type="text" placeholder="Nome Completo" id="name" onChange={handleChange} />
-                            <input type="email" placeholder="Email" id="email" onChange={handleChange} />
-                            <input type="password" placeholder="Senha" id="password" onChange={handleChange} />
-                            <input type="password" placeholder="Confirmar Senha" id="confirmPassword" onChange={handleChange} />
+                            <input type="text" placeholder="Nome Completo" id="signup-name" onChange={handleChange} />
+                            <input type="email" placeholder="Email" id="signup-email" onChange={handleChange} />
+                            <input type="password" placeholder="Senha" id="signup-password" onChange={handleChange} />
+                            <input type="password" placeholder="Confirmar Senha" id="signup-confirmPassword" onChange={handleChange} />
                             <button type='button' onClick={handleSignUp}>Cadastrar</button>
                         </form>
                     </div>
@@ -98,8 +98,8 @@ function Register2() {
                                 <a href="#" className="icon"><i className="fab fa-linkedin-in"></i></a>
                             </div>
                             <span>ou use seu e-mail e senha</span>
-                            <input type="email" placeholder="Email" id="email" onChange={handleChange} />
-                            <input type="password" placeholder="Password" id="password" onChange={handleChange} />
+                            <input type="email" placeholder="Email" id="signin-email" onChange={handleChange} />
+                            <input type="password" placeholder="Password" id="signin-password" onChange={handleChange} />
                             <a href="#">Esqueceu sua senha?</a>
                             <button type='button' onClick={handleSignIn}>Entrar</button>
                         </form>
@@ -109,12 +109,12 @@ function Register2() {
                             <div className={`toggle-panel toggle-left ${isActive ? '' : 'active'}`}>
                                 <h1>Bem Vindo(a) de volta!</h1>
                                 <p>Insira seus dados para acessar todo conteúdo do nosso site</p>
-                                <button className="hidden" id="login" type='button' onClick={toggleActive}>Entrar</button>
+                                <button className="hidden" id="toggle-login" type='button' onClick={toggleActive}>Entrar</button>
                             </div>
                             <div className={`toggle-panel toggle-right ${isActive ? 'active' : ''}`}>
                                 <h1>Não possui uma conta?</h1>
                                 <p> Cadastre seus dados para ter acesso a todo nosso conteúdo</p>
-                                <button className="hidden" id="register" type='button' onClick={toggleActive}>Cadastrar</button>
+                                <button className="hidden" id="toggle-register" type='button' onClick={toggleActive}>Cadastrar</button>
                             </div>
                         </div>
                     </div>

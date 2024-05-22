@@ -1,23 +1,24 @@
 import EcoNav from '../../components/Navbar/Navbar.jsx'
-import './Donation.css'
+import './Ecopontos2.css'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-function Donation() {
+function Ecopontos2() {
     return (
         <div>
             <EcoNav />
             <div className="Donation">
                 <div className='headers'>
-                    <h1 className="titles">Central de Doações</h1>
-                    <p>Aqui você encontrará o que precisa</p>
+                    <h1 className="titles">Ecopontos</h1>
+                    <p>Descartes corretos próximos de você</p>
                 </div>
                 <div className='product-container'>
                     <div className='product-card'>
-                        <img src="src\img\fonte.jpg" alt="" />
-                        <h2>Fonte PowerOne</h2>
-                        <p>Usado</p>
-                        <NavLink  to="/Product_Detalhes" className='NavLink' >Detalhes</NavLink>
+                        <h2>Ecoponto Arco-Íris</h2>
+                        <p>Jardim Arco-Íris</p>
+                        <p>Diadema</p>
+                        <p>* Aberto aos Sábados</p>
+                        <NavLink  to="/Eco_Detalhes" className='NavLink' >Detalhes</NavLink>
                     </div>
                 </div>
                 
@@ -26,4 +27,4 @@ function Donation() {
     )
 }
 
-export default Donation;
+export default Ecopontos2;

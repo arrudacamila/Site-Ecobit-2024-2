@@ -27,10 +27,13 @@ function EcoNav() {
                 <NavLink to="/" className="nav-link" activeClassName="active" exact>Home</NavLink>
               </Nav.Item>
               <Nav.Item>
-                <NavLink to="/Ecopontos" className="nav-link" activeClassName="active">Ecopontos</NavLink>
+                <NavLink to="/Ecopontos2" className="nav-link" activeClassName="active">Ecopontos</NavLink>
               </Nav.Item>
               <Nav.Item>
                 <NavLink to="/Register2" className="nav-link" activeClassName="active">Cadastre-se</NavLink>
+              </Nav.Item>
+              <Nav.Item>
+                <NavLink to ="/Donation" className="nav-link" activeClassName="active">Produtos</NavLink>
               </Nav.Item>
             </Nav>
           </Nav>
@@ -46,7 +49,7 @@ function EcoNav() {
               </Dropdown.Menu>
             </Dropdown>
           </Nav>
-          <Form className="d-flex">
+          {/* <Form className="d-flex">
             <Form.Control
               type="search"
               placeholder="Pesquisar"
@@ -54,7 +57,7 @@ function EcoNav() {
               aria-label="Search"
             />
             <Button variant="btn btn-success custom-btn"><i className="fa fa-search"></i> </Button>
-          </Form>
+          </Form> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
