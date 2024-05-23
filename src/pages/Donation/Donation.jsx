@@ -12,15 +12,15 @@ function Donation() {
                     <h1 className="titles">Central de Doações</h1>
                     <p>Aqui você encontrará o que precisa</p>
                 </div>
+                <NavLink to="/ProductForm" className="newDonation"><i className="fab fa-plus"></i> Nova Doação</NavLink>
                 <div className='product-container'>
                     <div className='product-card'>
                         <img src="src\img\fonte.jpg" alt="" />
                         <h2>Fonte PowerOne</h2>
                         <p>Usado</p>
-                        <NavLink  to="/Prod_Detalhes" className='NavLink' >Detalhes</NavLink>
+                        <NavLink to="/Prod_Detalhes" className='NavLink' >Detalhes</NavLink>
                     </div>
                 </div>
-                
             </div>
         </div>
     )

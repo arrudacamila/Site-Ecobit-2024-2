@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import EcoNav from "../../components/Navbar/Navbar.jsx";
 import "./ProductForm.css";
-import { FaCheckCircle } from 'react-icons/fa';
+import { FaCheckCircle, FaPlus } from 'react-icons/fa';
 
 function ProductForm() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const [images, setImages] = useState([]);
     const [quantidade, setQuantidade] = useState('');
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
-    const [titulo, setTitulo] = useState(''); // Adicionando estado para o título
+    const [titulo, setTitulo] = useState('');
     const [descricao, setDescricao] = useState('');
     const [categoria, setCategoria] = useState('');
     const [condicao, setCondicao] = useState('');
@@ -20,7 +24,7 @@ function ProductForm() {
             const reader = new FileReader();
             reader.onload = function (event) {
                 const imageData = {
-                    id: Date.now() + i, // ID único usando a data atual e o índice
+                    id: Date.now() + i,
                     src: event.target.result,
                     file: file
                 };
@@ -38,7 +42,6 @@ function ProductForm() {
 
     function handleQuantidadeChange(event) {
         const value = event.target.value;
-        // Se o valor for menor que 1, definir como 1
         if (value < 1) {
             setQuantidade(1);
         } else {
@@ -46,11 +49,11 @@ function ProductForm() {
         }
     }
 
-    function handleTituloChange(event) { // Função para lidar com alterações no título
+    function handleTituloChange(event) {
         setTitulo(event.target.value);
     }
 
-    function handleDescricaoChange(event) { // Função para lidar com alterações na descrição
+    function handleDescricaoChange(event) {
         setDescricao(event.target.value);
     }
 
@@ -80,7 +83,7 @@ function ProductForm() {
             setDisponibilidade('');
         }, 2000);
     }
-
+    
     return (
         <div>
             <EcoNav />
@@ -93,17 +96,21 @@ function ProductForm() {
                     <form onSubmit={handleSubmit}>
                         <div className="ProductForm-forms-form">
                             <h2>Selecione até 5 fotos</h2>
-                            <label className={`ProductForm-forms-input-file-button ${handleButtonDisabled ? 'disabled' : ''}`}>
-                                <span>Escolher Imagens</span>
-                                <input type="file" accept="image/*" id="images" multiple onChange={handleImageChange} className="ProductForm-forms-input-file" disabled={handleButtonDisabled} />
-                            </label>
-                            <br />
-                            {images.map(image => (
-                                <div key={image.id} className="ProductForm-forms-image-preview">
-                                    <img src={image.src} alt="Imagem" className="ProductForm-forms-preview-image" />
-                                    <button type="button" onClick={() => removeImage(image.id)} className="ProductForm-forms-remove-button">X</button>
-                                </div>
-                            ))}
+                            <div className="ProductForm-forms-image-container">
+                                {images.map(image => (
+                                    <div key={image.id} className="ProductForm-forms-image-preview">
+                                        <img src={image.src} alt="Imagem" className="ProductForm-forms-preview-image" />
+                                        <button type="button" onClick={() => removeImage(image.id)} className="ProductForm-forms-remove-button">X</button>
+                                    </div>
+                                ))}
+                                {!handleButtonDisabled && (
+                                    <label className="ProductForm-forms-add-image">
+                                        <FaPlus className="ProductForm-forms-add-icon" />
+                                        <span>Adicionar foto</span>
+                                        <input type="file" accept="image/*" id="images" multiple onChange={handleImageChange} className="ProductForm-forms-input-file" />
+                                    </label>
+                                )}
+                            </div>
                         </div>
                         <br />
                         <div className="ProductForm-forms-form-group">
@@ -147,7 +154,6 @@ function ProductForm() {
                     </form>
                 </div>
             </div>
-            {/* Modal de confirmação */}
             {showConfirmationModal && (
                 <div className="modal active">
                     <div className="modal-content">
@@ -161,4 +167,3 @@ function ProductForm() {
 }
 
 export default ProductForm;
-

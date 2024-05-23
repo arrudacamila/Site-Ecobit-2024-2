@@ -79,7 +79,6 @@ select {
     color: #6c757d;
 }
 
-/* Estilizar o texto de placeholder */
 select::-webkit-input-placeholder,
 input[type="number"]::-webkit-input-placeholder {
     color: #6c757d;
@@ -102,15 +101,25 @@ input[type="number"]::placeholder {
     resize: none;
 }
 
+.ProductForm-forms-image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .ProductForm-forms-image-preview {
     position: relative;
-    display: inline-block;
-    margin-right: 10px;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    border-radius: 10px;
 }
 
 .ProductForm-forms-preview-image {
-    max-width: 150px;
-    max-height: 150px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .ProductForm-forms-remove-button {
@@ -129,42 +138,39 @@ input[type="number"]::placeholder {
 }
 
 .ProductForm-forms-remove-button:hover {
-    background-color: rgba(255, 0, 0, 1);
+    background-color: rgb(161, 8, 8);
 }
 
-/* Oculta o nome do arquivo no input de arquivo */
 input[type="file"] {
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-/* Estilização do botão de inserção de imagem */
-.ProductForm-forms-input-file-button {
-    background-color: #4CAF50; /* Verde */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-bottom: 15px;
-    cursor: pointer;
-    border-radius: 25px; /* Arredondado */
-}
-
-/* Oculta o nome do arquivo no input de arquivo */
-.ProductForm-forms-input-file {
     display: none;
 }
 
-h2 {
-    font-size: 20px;
+.ProductForm-forms-add-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #888;
+    text-align: center;
 }
 
-.ProductForm-forms-input-file-button.disabled {
-    background-color: #ccc; /* Cinza */
-    cursor: not-allowed;
+.ProductForm-forms-add-image:hover{
+    background-color: #9ace95ad;
+}
+
+.ProductForm-forms-add-icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+
+.ProductForm-forms-form h2 {
+    font-size: 20px;
 }
 
 .modal {
@@ -173,20 +179,20 @@ h2 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0; /* Começa invisível */
-    pointer-events: none; /* Não é clicável enquanto estiver invisível */
-    transition: opacity 0.3s ease-in-out; /* Transição suave de opacidade */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .modal-content {
-    background-color: #fff; /* Fundo branco */
+    background-color: #fff;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -198,17 +204,16 @@ h2 {
 }
 
 .modal.active {
-    opacity: 1; /* Torna-se visível */
-    pointer-events: auto; /* Torna-se clicável */
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .modal.active .modal-content {
-    transform: scale(1); /* Animação de escala para aparecer suavemente */
+    transform: scale(1);
 }
 
 .modal-icon {
     font-size: 48px;
-    color: #4CAF50; /* Cor verde para o ícone de certo */
+    color: #4CAF50;
     margin-bottom: 20px;
 }
-
