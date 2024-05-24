@@ -8,32 +8,34 @@ import ChangePassword from '../../components/UserProfile/ChangePassword'
 import YourOrders from '../../components/UserProfile/UserDonations'
 import UserAddress from '../../components/UserProfile/UserAddress'
 import LegalNotice from '../../components/UserProfile/LegalNotice'
+import FloatingButton from '../../components/FloatingButton/FloatingButton'
 
 const UserProfile = () => {
 
-    const {activepage} = useParams()
+  const { activepage } = useParams()
 
 
-    // alert(activepage)
+  // alert(activepage)
   return (
     <div className='userprofile'>
-        <Navbar/>
-        {/* UserProfile , showing {activepage}
+      <Navbar />
+      {/* UserProfile , showing {activepage}
          */}
 
-         <div className='userprofilein'>
-            <div className='left'>
-              <UserSidebar activepage={activepage}/>
-            </div>
-            <div className='right'>
-              {activepage === 'accountsettings' && <AccountSettings/>}
-              {activepage === 'changepassword' && <ChangePassword/>}
-              {activepage === 'yourorders' && <YourOrders/>}
-              {activepage === 'address' && <UserAddress/>}
-              {activepage === 'legalnotice' && <LegalNotice/>}
-            </div>
-         </div>
+      <div className='userprofilein'>
+        <div className='left'>
+          <UserSidebar activepage={activepage} />
         </div>
+        <div className='right'>
+          {activepage === 'accountsettings' && <AccountSettings />}
+          {activepage === 'changepassword' && <ChangePassword />}
+          {activepage === 'yourorders' && <YourOrders />}
+          {activepage === 'address' && <UserAddress />}
+          {activepage === 'legalnotice' && <LegalNotice />}
+        </div>
+      </div>
+      <FloatingButton />
+    </div>
   )
 }
 

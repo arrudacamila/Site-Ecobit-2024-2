@@ -1,5 +1,7 @@
 .custom-navbar {
   background-color: #25861c;
+
+  background-image: radial-gradient(farthest-side , rgba(0, 255, 0, 0.493) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .custom-navbar .navbar-brand img {
@@ -16,7 +18,7 @@
 }
 
 .custom-navbar .dropdown-toggle {
-  color: black !important; 
+  color: black !important;
   margin-right: 15px;
 }
 

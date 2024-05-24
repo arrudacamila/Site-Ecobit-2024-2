@@ -14,27 +14,33 @@ function Prod_Detalhes() {
                         <div className="carousel-container">
                             <Carousel showThumbs={false} infiniteLoop={true} showStatus={false}>
                                 <div>
-                                    <img src="src/img/fonte.jpg" alt="Descrição da Imagem 1" />
+                                    <img src="src/img/armario.jpg" alt="Descrição da Imagem 1" />
                                 </div>
                                 <div>
-                                    <img src="path/to/your/image2.jpg" alt="Descrição da Imagem 2" />
+                                    <img src="src/img/armario2.jpg" alt="Descrição da Imagem 2" />
                                 </div>
                                 <div>
-                                    <img src="path/to/your/image3.jpg" alt="Descrição da Imagem 3" />
+                                    <img src="src/img/armario3.jpg" alt="Descrição da Imagem 3" />
                                 </div>
                                 <div>
-                                    <img src="path/to/your/image3.jpg" alt="Descrição da Imagem 3" />
+                                    <img src="src/img/armario4.jpg" alt="Descrição da Imagem 3" />
                                 </div>
                                 <div>
-                                    <img src="path/to/your/image3.jpg" alt="Descrição da Imagem 3" />
+                                    <img src="src/img/armario5.jpg" alt="Descrição da Imagem 3" />
                                 </div>
                             </Carousel>
                         </div>
                         <div className="text-container">
-                            <h1>Título</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, impedit. Dignissimos iure exercitationem tenetur neque harum consequuntur, in sequi suscipit nobis ducimus quaerat eligendi quasi dolorum, quis itaque est aperiam?</p>
-                            <p>Condição</p>
-                            <p>Disponibilidade</p>
+                            <h1>Armário Solteiro</h1>
+                            <p>Doa-se guarda roupa solteiro, com 1 ano de uso, está em ótimo estado de conservação. 4 portas 2 gavetas chile moval naturale/branco</p>
+                            <p>altura dos pés: 7 cm
+                                altura (cm): 183 cm
+                                largura (cm): 103 cm
+                                profundidade (cm): 47 cm
+                                peso (kg): 57.59 kg
+                                suporta até (kg): 56 kg</p>
+                            <p>Condição: usado em estado de novo</p>
+                            <p>Disponibilidade para levar: Não</p>
                             <p><i className='fab fa-whatsapp' /> (11) 9 1234-5678</p>
                         </div>
                     </div>

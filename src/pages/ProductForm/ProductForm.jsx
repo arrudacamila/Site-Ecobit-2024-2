@@ -78,7 +78,7 @@ function ProductForm() {
             setCategoria('');
             setCondicao('');
             setDisponibilidade('');
-        }, 2000);
+        }, 2600);
     }
 
     return (
@@ -107,7 +107,7 @@ function ProductForm() {
                         </div>
                         <br />
                         <div className="ProductForm-forms-form-group">
-                            <input type="text" id="titulo" className="ProductForm-forms-input-field" placeholder="Título" value={titulo} onChange={handleTituloChange} />
+                            <input type="text" id="titulo" className="ProductForm-forms-input-field" placeholder="Título" value={titulo} onChange={handleTituloChange} required/>
                         </div>
                         <div className="ProductForm-forms-form-group">
                             <div className="ProductForm-forms-input-field-container">
@@ -152,7 +152,8 @@ function ProductForm() {
                 <div className="modal active">
                     <div className="modal-content">
                         <FaCheckCircle className="modal-icon" />
-                        <p>Formulário enviado com sucesso!</p>
+                        <p>Produto cadastrado com sucesso!</p>
+                        <p>Muito Obrigado por ajudar</p>
                     </div>
                 </div>
             )}

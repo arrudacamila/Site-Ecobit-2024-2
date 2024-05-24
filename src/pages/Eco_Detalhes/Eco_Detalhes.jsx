@@ -44,11 +44,24 @@ function EcoDetalhes() {
     };
 
     return (
-        <div className="det_body">
+        <div>
             <EcoNav />
-            <h2 id="eco_name">Nome do Ecoponto</h2>
-            <div id="map" ref={mapRef} style={{ width: '80%', height: '400px', marginLeft: "10%" }}></div>
-            <p id="adress">Rua Ana Maria, Serraria 166 - Diadema - São Paulo</p>
+            <div className='eco-header'>
+                <h2 id="eco_name">Ecoponto João Batista (Vila Nogueira)</h2>
+            </div>
+            <div className="det_body">
+                <div className="details-container">
+                    <div id="map" ref={mapRef} className="map"></div>
+                    <div class="description">
+                        <p class="title">Endereço:</p>
+                        <p id="adress">Rua João Batista Alves do Nascimento, 546 Vila Nogueira - Diadema - São Paulo</p>
+                        <p class="title">CEP:</p>
+                        <p>04905-020</p>
+                        <p class="note">*Aberto aos Sábados</p>
+                    </div>
+
+                </div>
+            </div>
         </div>
     );
 }

@@ -18,7 +18,8 @@
 .ProductForm-forms-header {
     background-color: #25861c;
     padding: 20px;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
+    background-image: radial-gradient(circle, rgba(0, 255, 0, 0.493) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .ProductForm-forms-title {
@@ -66,6 +67,7 @@
 
 .ProductForm-forms-submit-btn:hover {
     background-color: #25861c;
+    background-image: radial-gradient(circle, rgba(0, 255, 0, 0.247) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 input[type="number"],
@@ -140,7 +142,7 @@ input[type="file"] {
 
 /* Estilização do botão de inserção de imagem */
 .ProductForm-forms-input-file-button {
-    background-color: #4CAF50; /* Verde */
+    background-color: #4CAF50;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -150,7 +152,11 @@ input[type="file"] {
     font-size: 16px;
     margin-bottom: 15px;
     cursor: pointer;
-    border-radius: 25px; /* Arredondado */
+    border-radius: 25px;
+}
+
+.ProductForm-forms-input-file-button:hover {
+    background-color: #419944;  
 }
 
 /* Oculta o nome do arquivo no input de arquivo */

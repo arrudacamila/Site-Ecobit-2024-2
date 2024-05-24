@@ -2,6 +2,7 @@ import EcoNav from '../../components/Navbar/Navbar.jsx'
 import './Donation.css'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import FloatingButton from '../../components/FloatingButton/FloatingButton.jsx'
 
 function Donation() {
     return (
@@ -14,13 +15,103 @@ function Donation() {
                 </div>
                 <div className='product-container'>
                     <div className='product-card'>
-                        <img src="src\img\fonte.jpg" alt="" />
+                        <div className="image-wrapper">
+                            <img src="src/img/fonte.jpg" alt="Fonte PowerOne" />
+                        </div>
                         <h2>Fonte PowerOne</h2>
-                        <p>Usado</p>
-                        <NavLink  to="/Prod_Detalhes" className='NavLink' >Detalhes</NavLink>
+                        <p>Usado - em condições razoaveis</p>
+                        <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
+                    </div>
+                    <div className='product-card'>
+                        <div className="image-wrapper">
+                            <img src="src/img/fogao.jpg" alt="Fogão 4 bocas" />
+                        </div>
+                        <h2>Fogão 4 bocas</h2>
+                        <p>Usado - em estado de novo</p>
+                        <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
+                    </div>
+                    <div className='product-card'>
+                        <div className="image-wrapper">
+                            <img src="src/img/madeira.jpg" alt="Madeira" />
+                        </div>
+                        <h2>Madeira</h2>
+                        <p>Usado - em boas condições</p>
+                        <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
+                    </div>
+                    <div className='product-card'>
+                        <div className="image-wrapper">
+                            <img src="src/img/roupas.jpg" alt="Sacola de roupas diversas" />
+                        </div>
+                        <h2>Sacola de roupas diversas</h2>
+                        <p>Usado - em boas condições</p>
+                        <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
+                    </div>
+                    <div className='product-card'>
+                        <div className="image-wrapper">
+                            <img src="src/img/jaqueta.jpg" alt="Jaqueta Jeans" />
+                        </div>
+                        <h2>Jaqueta Jeans</h2>
+                        <p>Usado - em estado de novo</p>
+                        <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
+                    </div>
+                    <div className='product-card'>
+                        <div className="image-wrapper">
+                            <img src="src/img/chinelo.jpg" alt="Chinelo Havaianas" />
+                        </div>
+                        <h2>Chinelo Havaianas</h2>
+                        <p>Novo</p>
+                        <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
+                    </div>
+                    <div className='product-card'>
+                        <div className="image-wrapper">
+                            <img src="src/img/armario.jpg" alt="Armário Solteiro" />
+                        </div>
+                        <h2>Armário Solteiro</h2>
+                        <p>Usado - em estado de novo</p>
+                        <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
+                    </div>
+                    <div className='product-card'>
+                        <div className="image-wrapper">
+                            <img src="src/img/talheres.jpg" alt="Jogo de Talheres" />
+                        </div>
+                        <h2>Jogo de Talheres</h2>
+                        <p>Novo</p>
+                        <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
+                    </div>
+                    <div className='product-card'>
+                        <div className="image-wrapper">
+                            <img src="src/img/monitor.jpg" alt="Monitor Queimado" />
+                        </div>
+                        <h2>Monitor Queimado</h2>
+                        <p>Usado - em condições razoáveis</p>
+                        <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
+                    </div>
+                    <div className='product-card'>
+                        <div className="image-wrapper">
+                            <img src="src/img/impressora.jpg" alt="Impressora HP" />
+                        </div>
+                        <h2>Impressora HP</h2>
+                        <p>Usado - em boas condições</p>
+                        <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
+                    </div>
+                    <div className='product-card'>
+                        <div className="image-wrapper">
+                            <img src="src/img/tenis.jpg" alt="Tênis All Star" />
+                        </div>
+                        <h2>Tênis All Star</h2>
+                        <p>Novo</p>
+                        <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
+                    </div>
+                    <div className='product-card'>
+                        <div className="image-wrapper">
+                            <img src="src/img/coberta.jpg" alt="Cobertores diversos" />
+                        </div>
+                        <h2>Cobertores diversos</h2>
+                        <p>Usado - em boas condições</p>
+                        <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
                     </div>
                 </div>
-                
+                <FloatingButton />
             </div>
         </div>
     )
