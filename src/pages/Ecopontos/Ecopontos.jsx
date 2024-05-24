@@ -3,8 +3,13 @@ import './Ecopontos.css'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import FloatingButton from '../../components/FloatingButton/FloatingButton.jsx'
+import { useEffect } from 'react'
 
 function Ecopontos() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div>
             <EcoNav />

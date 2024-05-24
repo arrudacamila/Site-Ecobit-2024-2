@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import EcoNav from "../../components/Navbar/Navbar.jsx";
 import "./ProductForm.css";
 import { FaCheckCircle } from 'react-icons/fa';
+import { MdOutlineAddToPhotos } from "react-icons/md";
 
 function ProductForm() {
     useEffect(() => {
@@ -24,7 +25,7 @@ function ProductForm() {
             const reader = new FileReader();
             reader.onload = function (event) {
                 const imageData = {
-                    id: Date.now() + i, // ID único usando a data atual e o índice
+                    id: Date.now() + i,
                     src: event.target.result,
                     file: file
                 };
@@ -42,7 +43,6 @@ function ProductForm() {
 
     function handleQuantidadeChange(event) {
         const value = event.target.value;
-        // Se o valor for menor que 1, definir como 1
         if (value < 1) {
             setQuantidade(1);
         } else {
@@ -84,30 +84,34 @@ function ProductForm() {
             setDisponibilidade('');
         }, 2000);
     }
-
+    
     return (
         <div>
             <EcoNav />
             <div className="ProductForm-forms">
                 <div className="ProductForm-forms-container">
                     <div className="ProductForm-forms-header">
-                        <h1 className="ProductForm-forms-title">Novo Produto</h1>
+                        <h1 className="ProductForm-forms-title">Nova Doação</h1>
                     </div>
                     <br />
                     <form onSubmit={handleSubmit}>
                         <div className="ProductForm-forms-form">
-                            <h2>Selecione até 5 fotos</h2>
-                            <label className={`ProductForm-forms-input-file-button ${handleButtonDisabled ? 'disabled' : ''}`}>
-                                <span>Escolher Imagens</span>
-                                <input type="file" accept="image/*" id="images" multiple onChange={handleImageChange} className="ProductForm-forms-input-file" disabled={handleButtonDisabled} />
-                            </label>
-                            <br />
-                            {images.map(image => (
-                                <div key={image.id} className="ProductForm-forms-image-preview">
-                                    <img src={image.src} alt="Imagem" className="ProductForm-forms-preview-image" />
-                                    <button type="button" onClick={() => removeImage(image.id)} className="ProductForm-forms-remove-button">X</button>
-                                </div>
-                            ))}
+                            <h2>Adicione até 5 fotos</h2>
+                            <div className="ProductForm-forms-image-container">
+                                {images.map(image => (
+                                    <div key={image.id} className="ProductForm-forms-image-preview">
+                                        <img src={image.src} alt="Imagem" className="ProductForm-forms-preview-image" />
+                                        <button type="button" onClick={() => removeImage(image.id)} className="ProductForm-forms-remove-button">X</button>
+                                    </div>
+                                ))}
+                                {!handleButtonDisabled && (
+                                    <label className="ProductForm-forms-add-image">
+                                        <MdOutlineAddToPhotos className="ProductForm-forms-add-icon" />
+                                        <span>Adicionar foto</span>
+                                        <input type="file" accept="image/*" id="images" multiple onChange={handleImageChange} className="ProductForm-forms-input-file" />
+                                    </label>
+                                )}
+                            </div>
                         </div>
                         <br />
                         <div className="ProductForm-forms-form-group">
@@ -145,13 +149,12 @@ function ProductForm() {
                             </select>
                         </div>
                         <div className="ProductForm-forms-form-group">
-                            <textarea type="text" id="descricao" className="ProductForm-forms-input-field" placeholder="Descrição" value={descricao} onChange={handleDescricaoChange} />
+                            <textarea type="text" id="descricao" className="ProductForm-forms-input-field" placeholder="Descricao" value={descricao} onChange={handleDescricaoChange} />
                         </div>
                         <input type="submit" value="Enviar" className="ProductForm-forms-submit-btn" />
                     </form>
                 </div>
             </div>
-            {/* Modal de confirmação */}
             {showConfirmationModal && (
                 <div className="modal active">
                     <div className="modal-content">

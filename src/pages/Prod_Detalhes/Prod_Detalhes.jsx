@@ -3,6 +3,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import EcoNav from "../../components/Navbar/Navbar";
 import "./Prod_Detalhes.css"
+import FloatingButton from "../../components/FloatingButton/FloatingButton"
 
 function Prod_Detalhes() {
     return (
@@ -46,6 +47,7 @@ function Prod_Detalhes() {
                     </div>
                 </div>
             </div>
+            <FloatingButton/>
         </div>
     )
 }

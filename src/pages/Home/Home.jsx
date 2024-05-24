@@ -3,8 +3,13 @@ import "./Home.css";
 import Button from "../../components/HOME/Button/Button.jsx";
 import Icon from "../../components/HOME/Icons/Icons.jsx";
 import FloatingButton from "../../components/FloatingButton/FloatingButton.jsx";
+import { useEffect } from "react";
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="Home">
       <section>
@@ -88,7 +93,7 @@ function Home() {
             </p>
           </div>
         </div>
-        <FloatingButton/>
+        <FloatingButton />
       </section>
     </div>
   );

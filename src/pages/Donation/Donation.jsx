@@ -1,10 +1,13 @@
 import EcoNav from '../../components/Navbar/Navbar.jsx'
 import './Donation.css'
-import React from 'react'
 import { NavLink } from 'react-router-dom'
-import FloatingButton from '../../components/FloatingButton/FloatingButton.jsx'
+import { useEffect } from 'react'
 
-function Donation() {
+function Donation() {   
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
     return (
         <div>
             <EcoNav />
@@ -13,12 +16,14 @@ function Donation() {
                     <h1 className="titles">Central de Doações</h1>
                     <p>Aqui você encontrará o que precisa</p>
                 </div>
-                {/* <NavLink to="/ProductForm" className="newDonation"><i className="fab fa-plus"></i> Nova Doação</NavLink> */}
+                <NavLink to="/ProductForm" className="newDonation"><i className="fab fa-plus"></i> Nova Doação</NavLink>
                 <div className='product-container'>
                     <div className='product-card'>
-                        <div className="image-wrapper">
-                            <img src="src/img/fonte.jpg" alt="Fonte PowerOne" />
-                        </div>
+                        <NavLink to="/Prod_Detalhes">
+                            <div className="image-wrapper">
+                                <img src="src/img/fonte.jpg" alt="Fonte PowerOne" />
+                            </div>
+                        </NavLink>
                         <h2>Fonte PowerOne</h2>
                         <p>Usado - em condições razoaveis</p>
                         <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
@@ -112,7 +117,6 @@ function Donation() {
                         <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
                     </div>
                 </div>
-                <FloatingButton />
             </div>
         </div>
     )

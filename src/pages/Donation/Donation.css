@@ -59,18 +59,18 @@
     display: block;
     background-color: #37a82d;
     color: #fff;
-    font-size: 14px; /* Aumenta um pouco o tamanho da fonte */
-    padding: 15px 20px; /* Ajusta o espaçamento interno */
+    font-size: 14px;
+    padding: 15px 20px;
     border: 1px solid transparent;
     border-radius: 8px;
     font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    margin-bottom: 20px; /* Espaço abaixo do botão */
+    margin-bottom: 20px;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    align-self: flex-start; /* Alinha o botão à esquerda dentro do container */
-    margin-left: 8.5%;
+    align-self: flex-start;
+    margin-left: 3%;
 }
 
 .newDonation:hover {
@@ -127,7 +127,7 @@
     transform: translateY(-5px);
 }
 
-.NavLink {
+/* .NavLink {
     background-color: #37a82d;
     color: #fff;
     font-size: 12px;
@@ -144,4 +144,4 @@
 
 .NavLink:hover {
     background-color: #27791f;
-}
+} */
