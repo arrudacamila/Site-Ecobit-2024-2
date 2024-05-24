@@ -55,6 +55,28 @@
     text-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
 }
 
+.newDonation {
+    display: block;
+    background-color: #37a82d;
+    color: #fff;
+    font-size: 14px; /* Aumenta um pouco o tamanho da fonte */
+    padding: 15px 20px; /* Ajusta o espaçamento interno */
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px; /* Espaço abaixo do botão */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    align-self: flex-start; /* Alinha o botão à esquerda dentro do container */
+    margin-left: 8.5%;
+}
+
+.newDonation:hover {
+    background-color: #27791f;
+}
+
 .product-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -99,24 +121,6 @@
     font-size: 1rem;
     color: #555;
     margin-bottom: 20px;
-}
-
-.product-card button {
-    background-color: #37a82d;
-    color: #fff;
-    font-size: 12px;
-    padding: 10px 45px;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-.product-card button:hover {
-    background-color: #27791f;
 }
 
 .product-card:hover {

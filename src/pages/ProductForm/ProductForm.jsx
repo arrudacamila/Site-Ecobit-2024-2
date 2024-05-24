@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import EcoNav from "../../components/Navbar/Navbar.jsx";
 import "./ProductForm.css";
 import { FaCheckCircle } from 'react-icons/fa';
 
 function ProductForm() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const [images, setImages] = useState([]);
     const [quantidade, setQuantidade] = useState('');
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
-    const [titulo, setTitulo] = useState(''); // Adicionando estado para o título
+    const [titulo, setTitulo] = useState('');
     const [descricao, setDescricao] = useState('');
     const [categoria, setCategoria] = useState('');
     const [condicao, setCondicao] = useState('');
@@ -46,11 +50,11 @@ function ProductForm() {
         }
     }
 
-    function handleTituloChange(event) { // Função para lidar com alterações no título
+    function handleTituloChange(event) {
         setTitulo(event.target.value);
     }
 
-    function handleDescricaoChange(event) { // Função para lidar com alterações na descrição
+    function handleDescricaoChange(event) {
         setDescricao(event.target.value);
     }
 
@@ -78,7 +82,7 @@ function ProductForm() {
             setCategoria('');
             setCondicao('');
             setDisponibilidade('');
-        }, 2600);
+        }, 2000);
     }
 
     return (
@@ -107,7 +111,7 @@ function ProductForm() {
                         </div>
                         <br />
                         <div className="ProductForm-forms-form-group">
-                            <input type="text" id="titulo" className="ProductForm-forms-input-field" placeholder="Título" value={titulo} onChange={handleTituloChange} required/>
+                            <input type="text" id="titulo" className="ProductForm-forms-input-field" placeholder="Título" value={titulo} onChange={handleTituloChange} />
                         </div>
                         <div className="ProductForm-forms-form-group">
                             <div className="ProductForm-forms-input-field-container">
@@ -141,7 +145,7 @@ function ProductForm() {
                             </select>
                         </div>
                         <div className="ProductForm-forms-form-group">
-                            <textarea type="text" id="descricao" className="ProductForm-forms-input-field" placeholder="Descricao" value={descricao} onChange={handleDescricaoChange} />
+                            <textarea type="text" id="descricao" className="ProductForm-forms-input-field" placeholder="Descrição" value={descricao} onChange={handleDescricaoChange} />
                         </div>
                         <input type="submit" value="Enviar" className="ProductForm-forms-submit-btn" />
                     </form>
@@ -152,8 +156,7 @@ function ProductForm() {
                 <div className="modal active">
                     <div className="modal-content">
                         <FaCheckCircle className="modal-icon" />
-                        <p>Produto cadastrado com sucesso!</p>
-                        <p>Muito Obrigado por ajudar</p>
+                        <p>Formulário enviado com sucesso!</p>
                     </div>
                 </div>
             )}
@@ -162,4 +165,3 @@ function ProductForm() {
 }
 
 export default ProductForm;
-
