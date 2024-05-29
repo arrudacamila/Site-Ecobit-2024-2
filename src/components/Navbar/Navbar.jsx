@@ -55,7 +55,7 @@ function EcoNav() {
                 Perfil <BsPersonFill className='drop-icon-person' />
               </a>
               <div className="dropdown-divider"></div>
-              <a href="#/Sair" className="dropdown-item">
+              <a href="/LoginHome" className="dropdown-item">
                 Sair<BsDoorOpen className='drop-icon-exit' />
               </a>
             </div>
