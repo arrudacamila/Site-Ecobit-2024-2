@@ -175,6 +175,11 @@ input[type="file"] {
     padding-bottom: 10px;
 }
 
+.ProductForm-forms-form p{
+    text-align: end;
+    color: red;
+}
+
 .modal {
     position: fixed;
     top: 0;
@@ -218,4 +223,33 @@ input[type="file"] {
     font-size: 48px;
     color: #4CAF50;
     margin-bottom: 20px;
+}
+
+.ProductForm-forms-form-group-inline {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ProductForm-forms-input-field-telefone {
+    width: calc(70% - 10px); /* Ajusta a largura do input de celular */
+    margin-right: 10px;
+}
+
+.ProductForm-forms-checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: green; /* Estiliza a cor do checkbox */
+    margin-right: 10px;
+}
+
+.ProductForm-forms-checkbox-label {
+    display: flex;
+    align-items: center;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 20px;
+    display: none; /* Inicialmente oculta */
 }

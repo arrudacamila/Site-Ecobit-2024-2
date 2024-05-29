@@ -3,11 +3,11 @@ import './Donation.css'
 import { NavLink } from 'react-router-dom'
 import { useEffect } from 'react'
 
-function Donation() {   
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  
+function Donation() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div>
             <EcoNav />
@@ -29,89 +29,111 @@ function Donation() {
                         <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
                     </div>
                     <div className='product-card'>
-                        <div className="image-wrapper">
-                            <img src="src/img/fogao.jpg" alt="Fogão 4 bocas" />
-                        </div>
+                        <NavLink to="/Prod_Detalhes">
+                            <div className="image-wrapper">
+                                <img src="src/img/fogao.jpg" alt="Fogão 4 bocas" />
+                            </div>
+                        </NavLink>
                         <h2>Fogão 4 bocas</h2>
                         <p>Usado - em estado de novo</p>
                         <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
                     </div>
                     <div className='product-card'>
-                        <div className="image-wrapper">
-                            <img src="src/img/madeira.jpg" alt="Madeira" />
-                        </div>
+                        <NavLink to="/Prod_Detalhes">
+                            <div className="image-wrapper">
+                                <img src="src/img/madeira.jpg" alt="Madeira" />
+                            </div>
+                        </NavLink>
                         <h2>Madeira</h2>
                         <p>Usado - em boas condições</p>
                         <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
                     </div>
                     <div className='product-card'>
-                        <div className="image-wrapper">
-                            <img src="src/img/roupas.jpg" alt="Sacola de roupas diversas" />
-                        </div>
+                        <NavLink to="/Prod_Detalhes">
+                            <div className="image-wrapper">
+                                <img src="src/img/roupas.jpg" alt="Sacola de roupas diversas" />
+                            </div>
+                        </NavLink>
                         <h2>Sacola de roupas diversas</h2>
                         <p>Usado - em boas condições</p>
                         <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
                     </div>
                     <div className='product-card'>
-                        <div className="image-wrapper">
-                            <img src="src/img/jaqueta.jpg" alt="Jaqueta Jeans" />
-                        </div>
+                        <NavLink to="/Prod_Detalhes">
+                            <div className="image-wrapper">
+                                <img src="src/img/jaqueta.jpg" alt="Jaqueta Jeans" />
+                            </div>
+                        </NavLink>
                         <h2>Jaqueta Jeans</h2>
                         <p>Usado - em estado de novo</p>
                         <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
                     </div>
                     <div className='product-card'>
-                        <div className="image-wrapper">
-                            <img src="src/img/chinelo.jpg" alt="Chinelo Havaianas" />
-                        </div>
+                        <NavLink to="/Prod_Detalhes">
+                            <div className="image-wrapper">
+                                <img src="src/img/chinelo.jpg" alt="Chinelo Havaianas" />
+                            </div>
+                        </NavLink>
                         <h2>Chinelo Havaianas</h2>
                         <p>Novo</p>
                         <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
                     </div>
                     <div className='product-card'>
-                        <div className="image-wrapper">
-                            <img src="src/img/armario.jpg" alt="Armário Solteiro" />
-                        </div>
+                        <NavLink to="/Prod_Detalhes">
+                            <div className="image-wrapper">
+                                <img src="src/img/armario.jpg" alt="Armário Solteiro" />
+                            </div>
+                        </NavLink>
                         <h2>Armário Solteiro</h2>
                         <p>Usado - em estado de novo</p>
                         <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
                     </div>
                     <div className='product-card'>
-                        <div className="image-wrapper">
-                            <img src="src/img/talheres.jpg" alt="Jogo de Talheres" />
-                        </div>
+                        <NavLink to="/Prod_Detalhes">
+                            <div className="image-wrapper">
+                                <img src="src/img/talheres.jpg" alt="Jogo de Talheres" />
+                            </div>
+                        </NavLink>
                         <h2>Jogo de Talheres</h2>
                         <p>Novo</p>
                         <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
                     </div>
                     <div className='product-card'>
-                        <div className="image-wrapper">
-                            <img src="src/img/monitor.jpg" alt="Monitor Queimado" />
-                        </div>
+                        <NavLink to="/Prod_Detalhes">
+                            <div className="image-wrapper">
+                                <img src="src/img/monitor.jpg" alt="Monitor Queimado" />
+                            </div>
+                        </NavLink>
                         <h2>Monitor Queimado</h2>
                         <p>Usado - em condições razoáveis</p>
                         <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
                     </div>
                     <div className='product-card'>
-                        <div className="image-wrapper">
-                            <img src="src/img/impressora.jpg" alt="Impressora HP" />
-                        </div>
+                        <NavLink to="/Prod_Detalhes">
+                            <div className="image-wrapper">
+                                <img src="src/img/impressora.jpg" alt="Impressora HP" />
+                            </div>
+                        </NavLink>
                         <h2>Impressora HP</h2>
                         <p>Usado - em boas condições</p>
                         <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
                     </div>
                     <div className='product-card'>
-                        <div className="image-wrapper">
-                            <img src="src/img/tenis.jpg" alt="Tênis All Star" />
-                        </div>
+                        <NavLink to="/Prod_Detalhes">
+                            <div className="image-wrapper">
+                                <img src="src/img/tenis.jpg" alt="Tênis All Star" />
+                            </div>
+                        </NavLink>
                         <h2>Tênis All Star</h2>
                         <p>Novo</p>
                         <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
                     </div>
                     <div className='product-card'>
-                        <div className="image-wrapper">
-                            <img src="src/img/coberta.jpg" alt="Cobertores diversos" />
-                        </div>
+                        <NavLink to="/Prod_Detalhes">
+                            <div className="image-wrapper">
+                                <img src="src/img/coberta.jpg" alt="Cobertores diversos" />
+                            </div>
+                        </NavLink>
                         <h2>Cobertores diversos</h2>
                         <p>Usado - em boas condições</p>
                         <NavLink to="/Prod_Detalhes" className='NavLink'>Detalhes</NavLink>
