@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import EcoNav from '../../components/Navbar/Navbar.jsx';
+import EcoNav from '../../components/LoginNavbar/LoginNavbar.jsx';
 import axios from 'axios'; // Importe axios, se ainda não estiver importado
 import './Register.css';
 
