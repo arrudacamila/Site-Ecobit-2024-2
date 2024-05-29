@@ -4,7 +4,6 @@ function LoginHome() {
     return (
         <div>
             <EcoNav/>
-
             <div className="LoginHome">
 
             </div>
