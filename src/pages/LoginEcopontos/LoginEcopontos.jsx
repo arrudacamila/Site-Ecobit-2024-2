@@ -2,7 +2,6 @@ import EcoNav from '../../components/LoginNavbar/LoginNavbar.jsx'
 import './LoginEcopontos.css'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import FloatingButton from '../../components/FloatingButton/FloatingButton.jsx'
 import { useEffect } from 'react'
 
 function LoginEcopontos() {
@@ -120,7 +119,6 @@ function LoginEcopontos() {
                     </div>
 
                 </div>
-                <FloatingButton />
             </div>
         </div>
     )
