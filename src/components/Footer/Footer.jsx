@@ -6,7 +6,7 @@ function Footer() {
             <div className="footerContainer">
                 <div className="row align-items-center">
                     <div className="col-lg-4 text-lg-start">
-                        Copyright &copy; EcoBit 2023
+                        Copyright &copy; EcoBit 2024
                     </div>
                     <div className="col-lg-4 my-3 my-lg-0">
                         <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter">
