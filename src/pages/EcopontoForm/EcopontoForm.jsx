@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import EcoNav from "../../components/Navbar/Navbar.jsx";
+import Footer from '../../components/Footer/Footer.jsx'
 import "./EcopontoForm.css";
 import { FaCheckCircle } from 'react-icons/fa';
 
@@ -9,26 +10,26 @@ function EcopontoForm() {
     }, []);
 
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
-    const [nomePonto, setnomePonto] = useState('');
-    const [materiaisPonto, setmateriaisPonto] = useState('');
-    const [enderecoPonto, setenderecoPonto] = useState('');
-    const [numeroPonto, setnumeroPonto] = useState('');
+    const [nomePonto, setNomePonto] = useState('');
+    const [materiaisPonto, setMateriaisPonto] = useState('');
+    const [enderecoPonto, setEnderecoPonto] = useState('');
+    const [numeroPonto, setNumeroPonto] = useState('');
     const [abertoSabado, setAbertoSabado] = useState('');
 
     function handleNomeChange(event) {
-        setnomePonto(event.target.value);
+        setNomePonto(event.target.value);
     }
 
     function handleMaterialChange(event) {
-        setmateriaisPonto(event.target.value);
+        setMateriaisPonto(event.target.value);
     }
 
     function handleEnderecoChange(event) {
-        setenderecoPonto(event.target.value);
+        setEnderecoPonto(event.target.value);
     }
 
     function handleNumeroChange(event) {
-        setnumeroPonto(event.target.value);
+        setNumeroPonto(event.target.value);
     }
 
     function handleAbertoSabadoChange(event) {
@@ -41,16 +42,16 @@ function EcopontoForm() {
         setShowConfirmationModal(true);
         setTimeout(() => {
             setShowConfirmationModal(false);
-            setnomePonto('');
-            setmateriaisPonto('');
-            setenderecoPonto('');
-            setnumeroPonto('');
+            setNomePonto('');
+            setMateriaisPonto('');
+            setEnderecoPonto('');
+            setNumeroPonto('');
             setAbertoSabado('');
         }, 2000);
     }
 
     return (
-        <div>
+        <div className="ecoponto-form-container">
             <EcoNav />
             <div className="EcopontoForm-forms">
                 <div className="EcopontoForm-forms-container">
@@ -91,6 +92,7 @@ function EcopontoForm() {
                     </div>
                 </div>
             )}
+            <Footer />
         </div>
     );
 }

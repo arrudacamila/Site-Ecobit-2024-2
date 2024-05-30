@@ -3,6 +3,7 @@ import './Ecopontos.css'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import FloatingButton from '../../components/FloatingButton/FloatingButton.jsx'
+import Footer from '../../components/Footer/Footer.jsx'
 import { useEffect } from 'react'
 
 function Ecopontos() {
@@ -122,6 +123,7 @@ function Ecopontos() {
                 </div>
                 <FloatingButton />
             </div>
+            <Footer />
         </div>
     )
 }

@@ -1,18 +1,24 @@
+.ecoponto-form-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .EcopontoForm-forms {
+    flex: 1;
     padding: 20px;
     padding-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .EcopontoForm-forms-container {
-    margin: 0 auto;
     background-color: #fff;
     border-radius: 30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
-    position: relative;
-    overflow: hidden;
-    width: 768px;
-    max-width: 100%;
-    min-height: 480px;
+    width: 80%;
+    max-width: 768px;
     padding: 20px;
 }
 
@@ -33,7 +39,8 @@
     margin-bottom: 20px;
 }
 
-.EcopontoForm-forms-input-field {
+.EcopontoForm-forms-input-field,
+.EcopontoForm-forms-select-field {
     width: 100%;
     padding: 10px;
     border: 1px solid #dddfe2;
@@ -42,11 +49,6 @@
 }
 
 .EcopontoForm-forms-select-field {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #dddfe2;
-    border-radius: 5px;
-    box-sizing: border-box;
     background-color: #f8f9fa;
     color: #6c757d;
 }
@@ -78,6 +80,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;

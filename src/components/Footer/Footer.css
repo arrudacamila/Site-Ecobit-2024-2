@@ -1,0 +1,63 @@
+/* Container principal deve ocupar o espaço restante */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* O conteúdo principal deve ocupar o espaço disponível */
+.main-content {
+    flex: 1;
+}
+
+/* Footer styling */
+.footer {
+    padding: 1rem 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.75) 25%, transparent 25%) -50px 0/100px 100px,
+                linear-gradient(225deg, rgba(0,0,0,0.75) 25%, transparent 25%) -50px 0/100px 100px,
+                linear-gradient(315deg, rgba(0,0,0,0.75) 25%, transparent 25%),
+                linear-gradient(45deg, rgba(0,0,0,0.75) 25%, transparent 25%);
+    background-color: rgb(19, 18, 17);
+    background-size: 100px 100px;
+    color: white; /* Define a cor do texto como branco */
+}
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .row {
+    width: 100%;
+}
+
+.footer .col-lg-4 {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+.footer .btn-social {
+    margin: 0 0.5rem;
+}
+
+/* Estilo para os links */
+.footer a.link-dark {
+    color: rgb(255, 255, 255); /* Define a cor do link como branco */
+    text-decoration: none;
+}
+
+.footer a.link-dark:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para o separador */
+.footer .link-separator {
+    color: white; /* Define a cor do separador como branco */
+    margin: 0 0.5rem;
+}
+
+.btn.btn-dark.btn-social.mx-2 i{
+    color: aliceblue;
+}

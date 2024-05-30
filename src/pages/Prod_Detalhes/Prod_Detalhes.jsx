@@ -4,10 +4,11 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import EcoNav from "../../components/Navbar/Navbar";
 import "./Prod_Detalhes.css"
 import FloatingButton from "../../components/FloatingButton/FloatingButton"
+import Footer from '../../components/Footer/Footer.jsx'
 
 function Prod_Detalhes() {
     return (
-        <div>
+        <div className="prod-detalhes-container">
             <EcoNav />
             <div className='Prod_Detalhes'>
                 <div className="card">
@@ -48,6 +49,7 @@ function Prod_Detalhes() {
                 </div>
             </div>
             <FloatingButton/>
+            <Footer />
         </div>
     )
 }

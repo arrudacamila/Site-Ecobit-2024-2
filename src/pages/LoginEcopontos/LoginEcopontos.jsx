@@ -1,4 +1,5 @@
 import EcoNav from '../../components/LoginNavbar/LoginNavbar.jsx'
+import Footer from '../../components/Footer/Footer.jsx'
 import './LoginEcopontos.css'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
@@ -120,6 +121,7 @@ function LoginEcopontos() {
 
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

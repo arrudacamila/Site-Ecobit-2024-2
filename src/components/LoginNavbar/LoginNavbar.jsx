@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import './LoginNavbar.css';
 import Logo from '../../img/nav-logo.png';
-
 
 function LoginEcoNav() {
 
@@ -41,7 +39,7 @@ function LoginEcoNav() {
               <NavLink to="/LoginEcopontos" className="nav-link" activeClassName="active">Ecopontos</NavLink>
             </li>
           </ul>
-          <div className="dropdown">          
+          <div className="nav-item">          
               <NavLink to="/Register" className="nav-link" activeClassName="active">Entrar</NavLink>
           </div>
         </div>

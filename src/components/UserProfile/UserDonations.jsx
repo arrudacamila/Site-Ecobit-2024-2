@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import './UserDonations.css'
 
 const UserDonations = () => {
   const [doacoes, setDoacoes] = useState([]);
@@ -20,9 +21,9 @@ const UserDonations = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="user-donation-container">
       <h1 className="text-center">Lista de Doações</h1>
-      <div className="row">
+      <div className="user-donation-row">
         {doacoes.map(doacao => (
           <div key={doacao.id} className="col-md-4 mb-4">
             <div className="card">

@@ -1,13 +1,13 @@
-import './Loading.css'
+import React from 'react';
+import './Loading.css';
 
-
-function Loading(){
-    return(
-        <div className='loader_container'>
-            <h1>Teste</h1>
-            <img className='loader' src="" alt="Loading" />
+function Loading() {
+    return (
+        <div className="loading-container">
+            <div className="spinner"></div>
+            <p className="loading-text">Carregando...</p>
         </div>
-    )
+    );
 }
 
 export default Loading;

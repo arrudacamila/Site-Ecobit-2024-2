@@ -1,4 +1,5 @@
 import EcoNav from '../../components/Navbar/Navbar.jsx'
+import Footer from '../../components/Footer/Footer.jsx'
 import './Donation.css'
 import { NavLink } from 'react-router-dom'
 import { useEffect } from 'react'
@@ -140,6 +141,7 @@ function Donation() {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

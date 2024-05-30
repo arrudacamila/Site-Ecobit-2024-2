@@ -56,7 +56,8 @@
 }
 
 .newDonation {
-    display: block;
+    position: relative;
+    display: inline-block;
     background-color: #37a82d;
     color: #fff;
     font-size: 14px;
@@ -69,13 +70,21 @@
     margin-bottom: 20px;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    align-self: flex-start;
-    margin-left: 3%;
+}
+
+.newDonation i {
+    margin-right: 5px; /* Adiciona um espaço entre o ícone e o texto */
+}
+
+.newDonation:hover i::before {
+    content: '\f004'; /* código do ícone de coração */
+    font-family: 'Font Awesome 5 Free';
 }
 
 .newDonation:hover {
-    background-color: #27791f;
+    background-color: #ff6347; /* mudando a cor do botão ao passar o mouse */
 }
+
 
 .product-container {
     display: grid;

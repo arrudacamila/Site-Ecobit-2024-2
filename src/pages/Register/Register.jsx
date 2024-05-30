@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import EcoNav from '../../components/LoginNavbar/LoginNavbar.jsx';
-import axios from 'axios'; // Importe axios, se ainda não estiver importado
+import axios from 'axios';
+import Footer from '../../components/Footer/Footer.jsx'
 import './Register.css';
 
 function Register() {
@@ -122,6 +123,7 @@ function Register() {
             </div>
             {message && <div className="message">{message}</div>}
             {error && <div className="error">{error}</div>}
+            <Footer />
         </div>
     );
 }

@@ -3,7 +3,8 @@ import EcoNav from "../../components/Navbar/Navbar.jsx";
 import "./ProductForm.css";
 import { FaCheckCircle, FaRegSmileWink } from 'react-icons/fa';
 import { MdOutlineAddToPhotos } from "react-icons/md";
-import InputMask from 'react-input-mask'; // Importação da biblioteca
+import InputMask from 'react-input-mask';
+import Footer from '../../components/Footer/Footer.jsx'
 
 function ProductForm() {
     useEffect(() => {
@@ -148,23 +149,23 @@ function ProductForm() {
                         </div>
                         <br />
                         <div className="ProductForm-forms-form-group">
-                            <input type="text" id="titulo" className="ProductForm-forms-input-field" placeholder="Título" value={titulo} onChange={handleTituloChange} required/>
+                            <input type="text" id="titulo" className="ProductForm-forms-input-field" placeholder="Título" value={titulo} onChange={handleTituloChange} required />
                         </div>
                         <div className="ProductForm-forms-form-group-inline">
-                            <InputMask 
-                                mask="(99) 99999-9999" 
-                                id="telefone" 
-                                className="ProductForm-forms-input-field ProductForm-forms-input-field-telefone" 
-                                placeholder="Celular" 
-                                value={telefone} 
-                                onChange={handleTelefoneChange} 
+                            <InputMask
+                                mask="(99) 99999-9999"
+                                id="telefone"
+                                className="ProductForm-forms-input-field ProductForm-forms-input-field-telefone"
+                                placeholder="Celular"
+                                value={telefone}
+                                onChange={handleTelefoneChange}
                                 required
                             />
                             <label className="ProductForm-forms-checkbox-label">
-                                <input 
-                                    type="checkbox" 
-                                    checked={aceitoUsoTelefone} 
-                                    onChange={handleAceitoUsoTelefoneChange} 
+                                <input
+                                    type="checkbox"
+                                    checked={aceitoUsoTelefone}
+                                    onChange={handleAceitoUsoTelefoneChange}
                                     className="ProductForm-forms-checkbox"
                                     required
                                 />
@@ -203,7 +204,7 @@ function ProductForm() {
                             </select>
                         </div>
                         <div className="ProductForm-forms-form-group">
-                            <textarea type="text" id="descricao" className="ProductForm-forms-input-field" placeholder="Descrição" value={descricao} onChange={handleDescricaoChange} />
+                            <textarea type="text" id="descricao" className="ProductForm-forms-input-field" placeholder="Descrição" value={descricao} onChange={handleDescricaoChange} required/>
                         </div>
                         <input type="submit" value="Enviar" className="ProductForm-forms-submit-btn" />
                     </form>
@@ -218,6 +219,7 @@ function ProductForm() {
                     </div>
                 </div>
             )}
+            <Footer />
         </div>
     );
 }

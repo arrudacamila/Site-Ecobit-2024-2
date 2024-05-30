@@ -1,42 +1,40 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import EcoNav from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer.jsx'
+import Loading from '../../components/Loading/Loading'; // Importe o componente Loading
 import "./Eco_Detalhes.css"
 
 function EcoDetalhes() {
-    const mapRef = useRef(null); // Referência para o elemento DOM onde o mapa será renderizado
+    const mapRef = useRef(null);
+    const [mapLoading, setMapLoading] = useState(true); // Estado para controlar o carregamento do mapa
 
     useEffect(() => {
-        // Inicializa o mapa após o componente ser montado
         initMap();
     }, []);
 
-    // Função para inicializar o mapa
     const initMap = () => {
-        // Obtenha o endereço do ecoponto
         const endereco = document.getElementById("adress").textContent;
-
-        // Cria um geocoder
         const geocoder = new window.google.maps.Geocoder();
 
-        // Geocode do endereço para obter as coordenadas
         geocoder.geocode({ address: endereco }, (results, status) => {
             if (status === 'OK' && results[0]) {
                 const { lat, lng } = results[0].geometry.location;
 
-                // Cria um novo mapa e o associa ao elemento com a ID 'map'
                 const map = new window.google.maps.Map(mapRef.current, {
-                    center: { lat: lat(), lng: lng() }, // Define o centro do mapa
-                    zoom: 17.1, // Define o nível de zoom
-                    disableDefaultUI: true, // Desabilita todos os controles padrão do mapa
-                    draggable: false, // Desabilita a capacidade de arrastar o mapa
+                    center: { lat: lat(), lng: lng() },
+                    zoom: 17.1,
+                    disableDefaultUI: true,
+                    draggable: false,
                 });
 
-                // Adicione um marcador para representar a localização do ecoponto
                 const marker = new window.google.maps.Marker({
                     position: { lat: lat(), lng: lng() },
                     map: map,
                     title: 'Nome do Ecoponto',
                 });
+
+                // Define o estado do mapa como carregado
+                setMapLoading(false);
             } else {
                 console.error('Geocode falhou devido a:', status);
             }
@@ -44,24 +42,28 @@ function EcoDetalhes() {
     };
 
     return (
-        <div>
+        <div className='eco-container'>
             <EcoNav />
             <div className='eco-header'>
                 <h2 id="eco_name">Ecoponto João Batista (Vila Nogueira)</h2>
             </div>
             <div className="det_body">
                 <div className="details-container">
-                    <div id="map" ref={mapRef} className="map"></div>
-                    <div class="description">
-                        <p class="title">Endereço:</p>
-                        <p id="adress">Rua João Batista Alves do Nascimento, 546 Vila Nogueira - Diadema - São Paulo</p>
-                        <p class="title">CEP:</p>
-                        <p>04905-020</p>
-                        <p class="note">*Aberto aos Sábados</p>
+                    <div className="map-container">
+                        {/* Renderiza o Loading apenas dentro da div do mapa enquanto o mapa está sendo carregado */}
+                        {mapLoading && <Loading />}
+                        <div id="map" ref={mapRef} className="map"></div>
                     </div>
-
+                    <div className="description">
+                        <p className="title">Endereço:</p>
+                        <p id="adress">Rua João Batista Alves do Nascimento, 546 Vila Nogueira - Diadema - São Paulo</p>
+                        <p className="title">CEP:</p>
+                        <p>04905-020</p>
+                        <p className="note">*Aberto aos Sábados</p>
+                    </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

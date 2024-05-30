@@ -1,4 +1,11 @@
+.eco-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 94vh;
+}
+
 .det_body {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,15 +33,23 @@
     display: flex;
     justify-content: space-between;
     width: 80%;
+    height: 100%;
     margin-top: 20px;
     border-radius: 20px;
     box-shadow: 5px 8px 20px;
+    flex-grow: 1;
+}
+
+.map-container{
+    flex: 1;
+    width: 400px; /* Defina um tamanho fixo ou um tamanho flexível */
+    height: 584px; /* Garantir que o mapa seja quadrado */
 }
 
 .map {
     flex: 1;
-    width: 400px; /* Defina um tamanho fixo ou um tamanho flexível */
-    height: 400px; /* Garantir que o mapa seja quadrado */
+    width: 100%; /* Defina um tamanho fixo ou um tamanho flexível */
+    height: 100%; /* Garantir que o mapa seja quadrado */
     border-radius: 20px 0px 0px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 

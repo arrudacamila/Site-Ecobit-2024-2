@@ -42,6 +42,33 @@
   margin: 0 10px;
 }
 
+.custom-navbar .nav-item:hover {
+  position: relative;
+}
+
+.custom-navbar .nav-item:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Ajuste para a linha ficar abaixo do texto */
+  width: 100%;
+  height: 2px; /* Espessura da linha */
+  background-color: white; /* Cor da linha */
+  animation: expandLine 0.3s ease; /* Animação de expandir */
+}
+
+@keyframes expandLine {
+  from {
+    width: 0; /* Começa com largura zero */
+    left: 50%; /* Inicia a partir do centro */
+  }
+  to {
+    width: 100%; /* Expande até a largura total */
+    left: 0; /* Retorna para a posição inicial */
+  }
+}
+
+
 .custom-navbar .nav-link {
   color: white;
   text-decoration: none;

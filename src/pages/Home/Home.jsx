@@ -1,4 +1,5 @@
 import EcoNav from "../../components/Navbar/Navbar.jsx";
+import Footer from '../../components/Footer/Footer.jsx'
 import "./Home.css";
 import Button from "../../components/HOME/Button/Button.jsx";
 import Icon from "../../components/HOME/Icons/Icons.jsx";
@@ -95,6 +96,7 @@ function Home() {
         </div>
         <FloatingButton />
       </section>
+      <Footer />
     </div>
   );
 }

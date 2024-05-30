@@ -9,6 +9,7 @@ import YourOrders from '../../components/UserProfile/UserDonations'
 import UserAddress from '../../components/UserProfile/UserAddress'
 import LegalNotice from '../../components/UserProfile/LegalNotice'
 import FloatingButton from '../../components/FloatingButton/FloatingButton'
+import Footer from '../../components/Footer/Footer.jsx'
 
 const UserProfile = () => {
 
@@ -17,24 +18,27 @@ const UserProfile = () => {
 
   // alert(activepage)
   return (
-    <div className='userprofile'>
-      <Navbar />
-      {/* UserProfile , showing {activepage}
+    <div>
+      <div className='userprofile'>
+        <Navbar />
+        {/* UserProfile , showing {activepage}
          */}
 
-      <div className='userprofilein'>
-        <div className='left'>
-          <UserSidebar activepage={activepage} />
+        <div className='userprofilein'>
+          <div className='left'>
+            <UserSidebar activepage={activepage} />
+          </div>
+          <div className='right'>
+            {activepage === 'accountsettings' && <AccountSettings />}
+            {activepage === 'changepassword' && <ChangePassword />}
+            {activepage === 'yourorders' && <YourOrders />}
+            {activepage === 'address' && <UserAddress />}
+            {activepage === 'legalnotice' && <LegalNotice />}
+          </div>
         </div>
-        <div className='right'>
-          {activepage === 'accountsettings' && <AccountSettings />}
-          {activepage === 'changepassword' && <ChangePassword />}
-          {activepage === 'yourorders' && <YourOrders />}
-          {activepage === 'address' && <UserAddress />}
-          {activepage === 'legalnotice' && <LegalNotice />}
-        </div>
+        <FloatingButton />
       </div>
-      <FloatingButton />
+      <Footer />
     </div>
   )
 }
