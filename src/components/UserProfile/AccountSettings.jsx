@@ -17,7 +17,7 @@ const AccountSettings = () => {
     const fetchUserData = async () => {
       try {
         const chave = localStorage.getItem('id')
-        const response = await fetch(`http://localhost:8080/getUserId/${chave}`); // --------------------------------- mudar para o ID do localstorage
+        const response = await fetch(`http://localhost:8080/getUserId/${chave}`);
         if (!response.ok) {
           throw new Error('Erro ao buscar os dados do usuário');
         }
@@ -46,7 +46,7 @@ const AccountSettings = () => {
   const handleSave = async () => {
     try {
       const chave = localStorage.getItem('id')
-      const response = await fetch(`http://localhost:8080/updateUser/${chave}`, { // --------------------------------- mudar para o ID do localstorage
+      const response = await fetch(`http://localhost:8080/updateUser/${chave}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
