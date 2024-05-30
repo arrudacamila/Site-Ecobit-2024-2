@@ -1,29 +1,23 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
-import Navbar from '../../components/Navbar/Navbar'
-import UserSidebar from '../../components/UserProfile/UserSidebar'
-import AccountSettings from '../../components/UserProfile/AccountSettings'
-import './UserProfile.css'
-import ChangePassword from '../../components/UserProfile/ChangePassword'
-import YourOrders from '../../components/UserProfile/UserDonations'
-import UserAddress from '../../components/UserProfile/UserAddress'
-import LegalNotice from '../../components/UserProfile/LegalNotice'
-import FloatingButton from '../../components/FloatingButton/FloatingButton'
-import Footer from '../../components/Footer/Footer.jsx'
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import Navbar from '../../components/Navbar/Navbar';
+import UserSidebar from '../../components/UserProfile/UserSidebar';
+import AccountSettings from '../../components/UserProfile/AccountSettings';
+import './UserProfile.css';
+import ChangePassword from '../../components/UserProfile/ChangePassword';
+import YourOrders from '../../components/UserProfile/UserDonations';
+import UserAddress from '../../components/UserProfile/UserAddress';
+import LegalNotice from '../../components/UserProfile/LegalNotice';
+import FloatingButton from '../../components/FloatingButton/FloatingButton';
+import Footer from '../../components/Footer/Footer.jsx';
 
 const UserProfile = () => {
+  const { activepage } = useParams();
 
-  const { activepage } = useParams()
-
-
-  // alert(activepage)
   return (
     <div>
       <div className='userprofile'>
         <Navbar />
-        {/* UserProfile , showing {activepage}
-         */}
-
         <div className='userprofilein'>
           <div className='left'>
             <UserSidebar activepage={activepage} />
@@ -40,7 +34,7 @@ const UserProfile = () => {
       </div>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default UserProfile
+export default UserProfile;

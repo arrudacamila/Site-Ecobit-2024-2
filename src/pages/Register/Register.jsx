@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import EcoNav from '../../components/LoginNavbar/LoginNavbar.jsx';
 import axios from 'axios';
-import Footer from '../../components/Footer/Footer.jsx'
+import Footer from '../../components/Footer/Footer.jsx';
 import './Register.css';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
+    const navigate = useNavigate();
     const [isActive, setActive] = useState(false);
     const [formState, setFormState] = useState({
         name: '',
@@ -20,7 +22,11 @@ function Register() {
     };
 
     const handleChange = (event) => {
-        setFormState({ ...formState, [event.target.id]: event.target.value });
+        const { id, value } = event.target;
+        setFormState((prevState) => ({
+            ...prevState,
+            [id]: value
+        }));
     };
 
     const handleSignUp = async () => {
@@ -54,11 +60,14 @@ function Register() {
         try {
             const response = await axios.post('http://localhost:8080/login', {
                 email: email,
-                password: password
+                senha: password
             });
             if (response.status === 200) {
-                setMessage('Login successful!');
+                const id = response.data.id; // Supondo que o servidor envie o ID do usuário após o login
+                setMessage('Login bem-sucedido!');
                 setError('');
+                localStorage.setItem('id', id); // Armazenando o e-mail no localStorage
+                navigate(`/user/accountsettings`);
             }
         } catch (error) {
             console.error('Login failed:', error);
@@ -82,10 +91,10 @@ function Register() {
                                 <a href="#" className="icon"><i className="fab fa-linkedin-in"></i></a>
                             </div>
                             <span>ou cadastre email e senha</span>
-                            <input type="text" placeholder="Nome Completo" id="signup-name" onChange={handleChange} />
-                            <input type="email" placeholder="Email" id="signup-email" onChange={handleChange} />
-                            <input type="password" placeholder="Senha" id="signup-password" onChange={handleChange} />
-                            <input type="password" placeholder="Confirmar Senha" id="signup-confirmPassword" onChange={handleChange} />
+                            <input type="text" placeholder="Nome Completo" id="name" onChange={handleChange} />
+                            <input type="email" placeholder="Email" id="email" onChange={handleChange} />
+                            <input type="password" placeholder="Senha" id="password" onChange={handleChange} />
+                            <input type="password" placeholder="Confirmar Senha" id="confirmPassword" onChange={handleChange} />
                             <button type='button' onClick={handleSignUp}>Cadastrar</button>
                         </form>
                     </div>
@@ -99,8 +108,8 @@ function Register() {
                                 <a href="#" className="icon"><i className="fab fa-linkedin-in"></i></a>
                             </div>
                             <span>ou use seu e-mail e senha</span>
-                            <input type="email" placeholder="Email" id="signin-email" onChange={handleChange} />
-                            <input type="password" placeholder="Password" id="signin-password" onChange={handleChange} />
+                            <input type="email" placeholder="Email" id="email" onChange={handleChange} />
+                            <input type="password" placeholder="Password" id="password" onChange={handleChange} />
                             <a href="#">Esqueceu sua senha?</a>
                             <button type='button' onClick={handleSignIn}>Entrar</button>
                         </form>

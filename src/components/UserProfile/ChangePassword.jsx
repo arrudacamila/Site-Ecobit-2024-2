@@ -4,17 +4,17 @@ import React from 'react'
 const ChangePassword = () => {
     return (
         <div className='accountsettings'>
-            <h1 className='mainhead1'>Change Password</h1>
+            <h1 className='mainhead1'>Mudar Senha</h1>
 
             <div className='form'>
                 <div className='form-group'>
-                    <label htmlFor='oldpass'>Old Password <span>*</span></label>
+                    <label htmlFor='oldpass'>Senha Antiga <span>*</span></label>
                     <input type="password"
                     />
                 </div>
 
                 <div className='form-group'>
-                    <label htmlFor='newpass'>New Password <span>*</span></label>
+                    <label htmlFor='newpass'>Nova Senha <span>*</span></label>
                     <input type="password"
                     />
                 </div>
@@ -24,7 +24,7 @@ const ChangePassword = () => {
 
             <button className='mainbutton1'
 
-            >Save Changes</button>
+            >Salvar Alterações</button>
         </div>
     )
 }
