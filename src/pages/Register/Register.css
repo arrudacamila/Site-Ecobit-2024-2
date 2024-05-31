@@ -226,3 +226,43 @@
     color: red;
     margin-top: 20px;
 }
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000; /* Garante que o modal fique acima de tudo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-register {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-icon {
+    font-size: 3rem;
+    color: green; /* Cor do ícone de sucesso */
+}
+
+.modal-icon-error{
+    font-size: 3rem;
+    color: rgb(255, 0, 0); /* Cor do ícone de sucesso */
+}
+
+.modal-register p {
+    margin-bottom: 20px;
+}
+
+.modal-register button:hover{
+    background-color: green;
+}

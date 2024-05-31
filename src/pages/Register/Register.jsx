@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import EcoNav from '../../components/LoginNavbar/LoginNavbar.jsx';
+import EcoNav from '../../components/Navbar/Navbar.jsx';
 import axios from 'axios';
 import Footer from '../../components/Footer/Footer.jsx';
 import './Register.css';
 import { useNavigate } from 'react-router-dom';
+import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa'; // Importe os ícones de check e times circle
 
 function Register() {
     const navigate = useNavigate();
@@ -14,11 +15,21 @@ function Register() {
         password: '',
         confirmPassword: ''
     });
+    const [isSuccessModalOpen, setSuccessModalOpen] = useState(false);
+    const [isErrorModalOpen, setErrorModalOpen] = useState(false);
     const [message, setMessage] = useState('');
     const [error, setError] = useState('');
 
     const toggleActive = () => {
         setActive(!isActive);
+    };
+
+    const toggleSuccessModal = () => {
+        setSuccessModalOpen(!isSuccessModalOpen);
+    };
+
+    const toggleErrorModal = () => {
+        setErrorModalOpen(!isErrorModalOpen);
     };
 
     const handleChange = (event) => {
@@ -33,7 +44,8 @@ function Register() {
         const { name, email, password, confirmPassword } = formState;
 
         if (password !== confirmPassword) {
-            setError("Passwords don't match.");
+            setError("Confira as senhas.");
+            toggleErrorModal(); // Abre o modal de erro
             return;
         }
 
@@ -44,18 +56,20 @@ function Register() {
                 senha: password
             });
             if (response.status === 201) {
-                setMessage('Registration successful!');
+                setMessage('Cadastrado com Sucesso!');
+                toggleSuccessModal(); // Abre o modal de sucesso
                 setError('');
             }
         } catch (error) {
             console.error('Registration failed:', error);
-            setError('Registration failed. Please try again.');
+            setError('Erro ao Cadastrar. Por favor, tente novamente.');
+            toggleErrorModal(); // Abre o modal de erro
             setMessage('');
         }
     };
 
     const handleSignIn = async () => {
-        const { email, password, id} = formState;
+        const { email, password } = formState;
 
         try {
             const response = await axios.post('http://localhost:8080/login', {
@@ -71,7 +85,8 @@ function Register() {
             }
         } catch (error) {
             console.error('Login failed:', error);
-            setError('Login failed. Please check your credentials.');
+            setError('Erro ao entrar. Confira seus dados.');
+            toggleErrorModal();
             setMessage('');
         }
     };
@@ -128,10 +143,30 @@ function Register() {
                             </div>
                         </div>
                     </div>
+                    {isSuccessModalOpen && (
+                        <div className="modal-overlay">
+                            <div className="modal-register">
+                                <FaCheckCircle className="modal-icon" />
+                                <p>{message}</p>
+                                <button onClick={toggleSuccessModal}>Fechar</button>
+                            </div>
+                        </div>
+                    )}
+
+                    {/* Modal de erro */}
+                    {isErrorModalOpen && (
+                        <div className="modal-overlay">
+                            <div className="modal-register">
+                                <FaTimesCircle className="modal-icon-error" />
+                                <p>{error}</p>
+                                <button onClick={toggleErrorModal}>Fechar</button>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
-            {message && <div className="message">{message}</div>}
-            {error && <div className="error">{error}</div>}
+            {/* {message && <div className="message">{message}</div>}
+            {error && <div className="error">{error}</div>} */}
             <Footer />
         </div>
     );

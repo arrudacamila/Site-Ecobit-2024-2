@@ -68,7 +68,6 @@
   }
 }
 
-
 .custom-navbar .nav-link {
   color: white;
   text-decoration: none;
@@ -83,6 +82,10 @@
   font-weight: 600;
 }
 
+.custom-navbar .auth-container {
+  margin-left: auto;
+}
+
 .custom-navbar .dropdown {
   position: relative;
   margin-left: auto;
@@ -91,7 +94,7 @@
 .custom-navbar .dropdown-toggle {
   background: none;
   border: none;
-  color: black;
+  color: white;
   font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -170,7 +173,7 @@ body {
   gap: 15px;
 }
 
-.Livia{
+.user-name {
   font-size: 15px;
 }
 
@@ -181,7 +184,7 @@ body {
 }
 
 .drop-icon-exit {
-  margin-left: 28px; /* Alinha o ícone à direita */
+  margin-left: 23px; /* Alinha o ícone à direita */
   margin-right: auto; /* Adiciona um espaço entre o ícone e o texto */
   font-size: 1.2rem; /* Tamanho do ícone */
 }

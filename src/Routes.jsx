@@ -9,7 +9,6 @@ import Eco_Detalhes from "./pages/Eco_Detalhes/Eco_Detalhes";
 import ProductForm from "./pages/ProductForm/ProductForm";
 import Register from "./pages/Register/Register"
 import Ecopontos from "./pages/Ecopontos/Ecopontos";
-import LoginEcopontos from "./pages/LoginEcopontos/LoginEcopontos";
 import Prod_Detalhes from "./pages/Prod_Detalhes/Prod_Detalhes";
 import EcopontoForm from "./pages/EcopontoForm/EcopontoForm"
 
@@ -27,7 +26,6 @@ function AppRoutes() {
                 <Route path="/ProductForm" element={<ProductForm />}></Route>
                 <Route path="/Register" element={<Register />} />
                 <Route path="/Ecopontos" element={<Ecopontos />} />
-                <Route path="/LoginEcopontos" element={<LoginEcopontos />}></Route>
                 <Route path="/Prod_Detalhes" element={<Prod_Detalhes />}></Route>
                 <Route path="/EcopontoForm" element={<EcopontoForm />}></Route>
             </Routes>

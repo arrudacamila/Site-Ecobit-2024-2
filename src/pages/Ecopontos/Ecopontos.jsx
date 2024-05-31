@@ -4,9 +4,20 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import FloatingButton from '../../components/FloatingButton/FloatingButton.jsx'
 import Footer from '../../components/Footer/Footer.jsx'
-import { useEffect } from 'react'
+import { useEffect , useState } from 'react'
 
 function Ecopontos() {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        const id = localStorage.getItem("id");
+        setIsLoggedIn(!!id);
+        if (id === "2") {
+          setIsAdmin(true);
+        }
+      }, []);
+      
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -121,7 +132,7 @@ function Ecopontos() {
                     </div>
 
                 </div>
-                <FloatingButton />
+                {isLoggedIn ? <FloatingButton /> : ''}
             </div>
             <Footer />
         </div>

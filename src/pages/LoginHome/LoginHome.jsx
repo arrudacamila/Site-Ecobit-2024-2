@@ -1,4 +1,4 @@
-import EcoNav from "../../components/LoginNavbar/LoginNavbar"
+import EcoNav from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer"
 
 function LoginHome() {
