@@ -1,33 +1,56 @@
-import './Footer.css';
+import React from "react";
+import "./Footer.css";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
-function Footer() {
-    return (
-        <footer className="footer py-4">
-            <div className="footerContainer">
-                <div className="row align-items-center">
-                    <div className="col-lg-4 text-lg-start">
-                        Copyright &copy; EcoBit 2024
-                    </div>
-                    <div className="col-lg-4 my-3 my-lg-0">
-                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter">
-                            <i className="fab fa-twitter"></i>
-                        </a>
-                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook">
-                            <i className="fab fa-facebook-f"></i>
-                        </a>
-                        <a className="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn">
-                            <i className="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                    <div className="col-lg-4 text-lg-end">
-                        <a className="link-dark text-decoration-none me-3" href="#!">Política de Privacidade</a>
-                        <span className="link-separator">|</span>
-                        <a className="link-dark text-decoration-none ms-3" href="#!">Termos de Uso</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    );
-}
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="footer-section about">
+          <h1>ECOBIT</h1>
+          <p className="footer-slogan">"Contribuindo para um futuro melhor"</p>
+          <p>Fatec Luigi Papaiz, Diadema</p>
+          <p>+55 1199999-9999</p>
+          <p>contato@ecobit.com</p>
+        </div>
+        <div className="footer-social">
+          <div className="footer-social-icons">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebook size={20} />
+            </a>
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTwitter size={20} />
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin size={20} />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Ecobit </p>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;
