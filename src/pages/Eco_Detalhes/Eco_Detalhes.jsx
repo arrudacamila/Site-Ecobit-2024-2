@@ -50,7 +50,6 @@ function EcoDetalhes() {
             <div className="det_body">
                 <div className="details-container">
                     <div className="map-container">
-                        {/* Renderiza o Loading apenas dentro da div do mapa enquanto o mapa está sendo carregado */}
                         {mapLoading && <Loading />}
                         <div id="map" ref={mapRef} className="map"></div>
                     </div>

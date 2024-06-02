@@ -16,28 +16,23 @@ const AccountSettings = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const chave = localStorage.getItem('id')
+        const chave = localStorage.getItem('id');
+        if (!chave) {
+          throw new Error('ID do usuário não encontrado no localStorage');
+        }
         const response = await fetch(`http://localhost:8080/getUserId/${chave}`);
         if (!response.ok) {
           throw new Error('Erro ao buscar os dados do usuário');
         }
         const userDataFromBackend = await response.json();
-        
-        // Map the backend data to the userData state structure
-        setUserData({
-          nome: userDataFromBackend.nome || '',
-          telefone: userDataFromBackend.telefone || '',
-          email: userDataFromBackend.email || '',
-          endereco: userDataFromBackend.endereco || '',
-          cep: userDataFromBackend.cep || ''
-        });
+        setUserData(userDataFromBackend);
       } catch (error) {
         console.error('Erro ao buscar os dados do usuário:', error);
       }
     };
 
     fetchUserData();
-  }, [id]);
+  }, []);
 
   const handleInputChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
@@ -45,7 +40,11 @@ const AccountSettings = () => {
 
   const handleSave = async () => {
     try {
-      const chave = localStorage.getItem('id')
+      const chave = localStorage.getItem('id');
+      if (!chave) {
+        throw new Error('ID do usuário não encontrado no localStorage');
+      }
+
       const response = await fetch(`http://localhost:8080/updateUser/${chave}`, {
         method: 'PUT',
         headers: {
@@ -53,12 +52,12 @@ const AccountSettings = () => {
         },
         body: JSON.stringify(userData)
       });
+
       if (!response.ok) {
         throw new Error('Erro ao atualizar os dados do usuário');
       }
-      const data = await response.json();
-      console.log(data);
-      navigate('/user/accountsettings'); // Navigate or show a success message as needed
+
+      navigate('/user/accountsettings');
     } catch (error) {
       console.error('Erro ao atualizar os dados do usuário:', error);
     }
@@ -93,12 +92,11 @@ const AccountSettings = () => {
           <label htmlFor="cep">CEP</label>
           <input type="text" name="cep" id="cep" value={userData.cep} onChange={handleInputChange} />
         </div>
-        
-        {/* Add more fields as necessary */}
       </div>
 
       <button className="mainbutton1" onClick={handleSave}>Salvar alterações</button>
     </div>
   );
 };
+
 export default AccountSettings;

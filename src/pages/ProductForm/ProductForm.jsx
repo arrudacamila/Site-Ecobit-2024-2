@@ -4,13 +4,15 @@ import "./ProductForm.css";
 import { FaCheckCircle, FaRegSmileWink } from 'react-icons/fa';
 import { MdOutlineAddToPhotos } from "react-icons/md";
 import InputMask from 'react-input-mask';
-import Footer from '../../components/Footer/Footer.jsx'
+import Footer from '../../components/Footer/Footer.jsx';
+import axios from 'axios';
 
 function ProductForm() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
+    const user = localStorage.getItem("id");
     const [images, setImages] = useState([]);
     const [quantidade, setQuantidade] = useState('');
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
@@ -21,41 +23,45 @@ function ProductForm() {
     const [disponibilidade, setDisponibilidade] = useState('');
     const [telefone, setTelefone] = useState(''); // Novo estado para o telefone
     const [aceitoUsoTelefone, setAceitoUsoTelefone] = useState(false); // Novo estado para o checkbox
-    const [error, setError] = useState(''); // Novo estado para a mensagem de erro
+    const [error, setError] = useState('');
+    const [handleButtonDisabled, setHandleButtonDisabled] = useState(false);
 
-    function handleImageChange(event) {
-        const fileList = event.target.files;
-        if (fileList.length > 0) {
-            setError(''); // Remove a mensagem de erro se uma imagem for adicionada
-        }
-        for (let i = 0; i < fileList.length && images.length < 5; i++) {
-            const file = fileList[i];
+    function convertToBase64(file) {
+        return new Promise((resolve, reject) => {
             const reader = new FileReader();
-            reader.onload = function (event) {
-                const imageData = {
-                    id: Date.now() + i,
-                    src: event.target.result,
-                    file: file
-                };
-                setImages(prevImages => [...prevImages, imageData]);
-            };
             reader.readAsDataURL(file);
-        }
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = error => reject(error);
+        });
     }
+
+    async function handleImageChange(e) {
+        const files = Array.from(e.target.files);
+        const imagePreviews = await Promise.all(files.map(async (file) => {
+            const base64 = await convertToBase64(file);
+            return {
+                file,
+                src: base64,
+                id: Math.random().toString(36).substr(2, 9),
+            };
+        }));
+
+        setImages((prevImages) => [...prevImages, ...imagePreviews]);
+        setHandleButtonDisabled(true);
+    }
+
+    
+    useEffect(() => {
+        setHandleButtonDisabled(images.length >= 5);
+    }, [images]);
 
     function removeImage(id) {
-        setImages(prevImages => prevImages.filter(image => image.id !== id));
+        setImages((prevImages) => prevImages.filter((image) => image.id !== id));
+        setHandleButtonDisabled(false);
     }
 
-    const handleButtonDisabled = images.length >= 5;
-
     function handleQuantidadeChange(event) {
-        const value = event.target.value;
-        if (value < 1) {
-            setQuantidade(1);
-        } else {
-            setQuantidade(value);
-        }
+        setQuantidade(event.target.value);
     }
 
     function handleTituloChange(event) {
@@ -86,7 +92,7 @@ function ProductForm() {
         setAceitoUsoTelefone(event.target.checked);
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
         if (images.length === 0) {
             setError('Por favor, adicione ao menos uma imagem.');
@@ -100,19 +106,44 @@ function ProductForm() {
             setError('Você deve aceitar o uso do seu telefone pela plataforma.');
             return;
         }
-        setShowConfirmationModal(true);
-        setTimeout(() => {
-            setShowConfirmationModal(false);
-            setImages([]);
-            setQuantidade('');
-            setTitulo('');
-            setDescricao('');
-            setCategoria('');
-            setCondicao('');
-            setDisponibilidade('');
-            setTelefone(''); // Limpa o campo de telefone após submissão
-            setAceitoUsoTelefone(false); // Reseta o checkbox após submissão
-        }, 2000);
+
+        const imagensBase64 = images.map(image => image.src);
+
+        const doacao = {
+            user,
+            titulo,
+            descricao,
+            quantidade,
+            categoria,
+            condicao,
+            disponibilidade,
+            telefone,
+            imagensBase64
+        };
+
+        try {
+            const response = await axios.post('http://localhost:8080/saveDoa', doacao, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            setShowConfirmationModal(true);
+            setTimeout(() => {
+                setShowConfirmationModal(false);
+                setImages([]);
+                setQuantidade('');
+                setTitulo('');
+                setDescricao('');
+                setCategoria('');
+                setCondicao('');
+                setDisponibilidade('');
+                setTelefone(''); // Limpa o campo de telefone após submissão
+                setAceitoUsoTelefone(false); // Reseta o checkbox após submissão
+            }, 2000);
+        } catch (error) {
+            setError('Erro ao enviar a doação. Por favor, tente novamente.');
+        }
     }
 
     return (
@@ -179,28 +210,28 @@ function ProductForm() {
                             <div className="ProductForm-forms-input-field-container">
                                 <select name="categoria" id="categoria" className="ProductForm-forms-input-field" required value={categoria} onChange={handleCategoriaChange}>
                                     <option value="" disabled>Categoria</option>
-                                    <option value="0">Móvel</option>
-                                    <option value="1">Roupa</option>
-                                    <option value="2">Eletrônico</option>
-                                    <option value="3">Eletrodoméstico</option>
+                                    <option value="Móvel">Móvel</option>
+                                    <option value="Roupa">Roupa</option>
+                                    <option value="Eletrônico">Eletrônico</option>
+                                    <option value="Eletrodoméstico">Eletrodoméstico</option>
                                 </select>
                             </div>
                         </div>
                         <div className="ProductForm-forms-form-group">
                             <select name="condicao" id="condicao" className="ProductForm-forms-input-field" required value={condicao} onChange={handleCondicaoChange}>
                                 <option value="" disabled>Condição</option>
-                                <option value="0">Novo</option>
-                                <option value="1">Usado - estado de novo</option>
-                                <option value="2">Usado - em boas condições</option>
-                                <option value="3">Usado - em condições razoáveis</option>
+                                <option value="Novo">Novo</option>
+                                <option value="Usado - estado de novo">Usado - estado de novo</option>
+                                <option value="Usado - em boas condições">Usado - em boas condições</option>
+                                <option value="Usado - em condições razoáveis">Usado - em condições razoáveis</option>
                             </select>
                         </div>
                         <div className="ProductForm-forms-form-group">
                             <label htmlFor="disponibilidade">Tem disponibilidade para levar até o interessado?</label>
                             <select name="disponibilidade" id="disponibilidade" className="ProductForm-forms-input-field" required value={disponibilidade} onChange={handleDisponibilidadeChange}>
                                 <option value="">Selecione</option>
-                                <option value="0">Sim</option>
-                                <option value="1">Não</option>
+                                <option value="Sim">Sim</option>
+                                <option value="Não">Não</option>
                             </select>
                         </div>
                         <div className="ProductForm-forms-form-group">
