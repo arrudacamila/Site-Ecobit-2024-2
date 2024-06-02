@@ -22,25 +22,7 @@ const UserSidebar = ({ activepage }) => {
           </div>
         </Link>
       )}
-      {activepage === 'changepassword' ? (
-        <div className='s2'>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-          <span>Mudar Senha</span>
-        </div>
-      ) : (
-        <Link to='/user/changepassword' className='stylenone'>
-          <div className='s1'>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            <span>Mudar Senha</span>
-          </div>
-        </Link>
-      )}
+      
       {activepage === 'yourorders' ? (
         <div className='s2'>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -58,6 +40,27 @@ const UserSidebar = ({ activepage }) => {
           </div>
         </Link>
       )}
+
+    {activepage === 'ProductForm' ? (
+        <div className='s2'>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M14 3v5h5M12 18v-6M9 15h6" />
+          </svg>
+          <span>Mudar Senha</span>
+        </div>
+      ) : (
+        <Link to='/ProductForm' className='stylenone'>
+          <div className='s1'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M14 3v5h5M12 18v-6M9 15h6"/>
+            </svg>
+            <span>Nova Doção</span>
+          </div>
+        </Link>
+      )}
+
       {activepage === 'address' ? (
         <div className='s2'>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

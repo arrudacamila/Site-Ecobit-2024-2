@@ -7,6 +7,7 @@ import { BsPersonFill, BsDoorOpen } from "react-icons/bs";
 function EcoNav() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
+  const [userName, setUserName] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,8 +29,25 @@ function EcoNav() {
   useEffect(() => {
     const id = localStorage.getItem("id");
     setIsLoggedIn(!!id);
-    if (id === "665b8ab700c45758228ec303") {
+    if (id === "665b7e0f066d7e7f041c82e2") {
       setIsAdmin(true);
+    }
+
+    if (id) {
+      const fetchUserData = async () => {
+        try {
+          const response = await fetch(`http://localhost:8080/getUserId/${id}`);
+          if (!response.ok) {
+            throw new Error("Erro ao buscar os dados do usuário");
+          }
+          const userData = await response.json();
+          setUserName(userData.nome);
+        } catch (error) {
+          console.error("Erro ao buscar os dados do usuário:", error);
+        }
+      };
+
+      fetchUserData();
     }
   }, []);
 
@@ -78,7 +96,7 @@ function EcoNav() {
             {isLoggedIn ? (
               <div className="dropdown">
                 <button className="dropdown-toggle">
-                  <h2 className="user-name">{isAdmin ? "Administrador" : "Olá, Livia!"}</h2>
+                  <h2 className="user-name">{isAdmin ? "Administrador" : "Ola, " + userName}</h2>
                 </button>
                 <div className="dropdown-menu">
                   <a href="/user/accountsettings" className="dropdown-item">
