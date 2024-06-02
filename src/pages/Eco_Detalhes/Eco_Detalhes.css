@@ -1,0 +1,86 @@
+.eco-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 94vh;
+}
+
+.det_body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.eco-header {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #25861c, #c2c95d00); /* Fundo fumê verde para transparente */
+    padding: 20px; /* Ajuste conforme necessário para espaçamento interno */
+}
+
+#eco_name {
+    color: rgb(255, 255, 255); /* Define o texto como branco */
+    margin: 0; /* Remove margens padrão */
+    text-align: center; /* Centraliza o texto */
+    font-size: xx-large;
+}
+
+
+.details-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 100%;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 8px 20px;
+    flex-grow: 1;
+}
+
+.map-container{
+    flex: 1;
+    width: 400px; /* Defina um tamanho fixo ou um tamanho flexível */
+    height: 584px; /* Garantir que o mapa seja quadrado */
+}
+
+.map {
+    flex: 1;
+    width: 100%; /* Defina um tamanho fixo ou um tamanho flexível */
+    height: 100%; /* Garantir que o mapa seja quadrado */
+    border-radius: 20px 0px 0px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+.description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 0px 20px 20px 0px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #FFF;
+}
+
+.description p {
+    margin: 0; /* Remove margens padrão */
+    padding: 5px 0; /* Adiciona espaçamento entre os itens */
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+    line-height: 1.5; /* Ajusta a altura da linha para melhor legibilidade */
+}
+
+.description .title {
+    font-weight: bold; /* Destaca os títulos */
+    margin-top: 10px; /* Adiciona espaçamento acima dos títulos */
+}
+
+.description .note {
+    margin-top: 20px; /* Adiciona mais espaçamento acima da nota */
+    font-style: italic; /* Deixa a nota em itálico */
+    color: #37a82d; /* Cor diferente para destacar a nota */
+}

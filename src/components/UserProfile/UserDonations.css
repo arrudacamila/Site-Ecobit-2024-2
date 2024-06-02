@@ -1,0 +1,64 @@
+.edit-donation-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #eaf3ea;
+  overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando necessário */
+  height: 464px;
+
+}
+
+.edit-donation-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 20px; /* Adiciona espaço na parte inferior para evitar que o último card fique cortado */
+}
+
+.edit-donation-card {
+  background-color: #ffffff; 
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+  margin-top: 20px;
+  flex: 1;
+  min-width: 270px; /* Define a largura máxima dos cards */
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+
+.edit-donation-card-body {
+  padding: 20px;
+}
+
+.edit-donation-card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.edit-donation-card-text {
+  font-size: 14px;
+}
+
+.edit-donation-img-thumbnail {
+  width: 200px;
+  height: 150px; /* Altura fixa para todas as imagens */
+  object-fit: cover; /* Redimensiona a imagem para cobrir todo o espaço */
+}
+
+.edit-button {
+  display: block;
+  width: 100px;
+  height: 40px; /* Altura fixa para o botão */
+  padding: 10px;
+  background-color: green;
+  border: 2px solid green;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 0 auto; /* Centraliza o botão horizontalmente */
+}
+
+.edit-button:hover {
+  background-color: white;
+  color: green;
+  font-weight: 600;
+}

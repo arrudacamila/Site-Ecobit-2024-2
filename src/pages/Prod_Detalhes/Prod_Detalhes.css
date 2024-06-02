@@ -1,0 +1,66 @@
+.prod-detalhes-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 94vh;
+}
+
+.Prod_Detalhes {
+    flex: 1;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+}
+
+.card-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.carousel-container {
+    flex-shrink: 0;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel-container .carousel .slide {
+    width: 300px;
+    height: 300px;
+}
+
+.carousel-container .carousel .slide img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.text-container {
+    flex-grow: 1;
+    max-width: calc(100% - 340px);
+}
+
+.text-container h1 {
+    margin-top: 0;
+}
+
+.text-container p {
+    margin: 10px 0;
+}
+
+.text-container i {
+    margin-right: 5px;
+    color: rgb(9, 255, 0);
+}
