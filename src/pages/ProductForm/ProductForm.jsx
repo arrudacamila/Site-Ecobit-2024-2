@@ -12,7 +12,7 @@ function ProductForm() {
         window.scrollTo(0, 0);
     }, []);
 
-    const user = localStorage.getItem("id");
+    const userId = localStorage.getItem("id");
     const [images, setImages] = useState([]);
     const [quantidade, setQuantidade] = useState('');
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
@@ -110,7 +110,7 @@ function ProductForm() {
         const imagensBase64 = images.map(image => image.src);
 
         const doacao = {
-            user,
+            userId,
             titulo,
             descricao,
             quantidade,
