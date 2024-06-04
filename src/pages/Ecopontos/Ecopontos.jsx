@@ -26,7 +26,6 @@ function Ecopontos() {
     useEffect(() => {
         axios.get('http://localhost:8080/getAllPontos')
             .then(response => {
-                console.log(response.data);
                 setPontos(response.data);
             })
             .catch(error => {
@@ -45,6 +44,7 @@ function Ecopontos() {
                 <div className='product-container'>
                     {pontos.map(ponto => (
                         <div className='product-card' key={ponto.id}>
+                            {localStorage.getItem('id') ==="id do ADMIN" && <xButton />}
                             <h2>{ponto.nomePonto}</h2>
                             <br></br>
                             <h3>Endereço:</h3>
@@ -52,11 +52,9 @@ function Ecopontos() {
                             <h3>Cep:</h3>
                             <br></br>
                             <p> {ponto.numeroPonto}</p>
-                            
                             <NavLink to={`/Eco_Detalhes/${ponto.id}`} className='NavLink'>Detalhes</NavLink>
                         </div>
                     ))}
-
                 </div>
                 {isLoggedIn ? <FloatingButton /> : ''}
             </div>

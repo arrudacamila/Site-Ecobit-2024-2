@@ -13,21 +13,35 @@
 }
 
 .eco-header {
-    margin-top: 15px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    /* Alinha o texto à direita */
+    text-align: right;
+    /* Garante que o texto fique alinhado à direita */
+    margin-bottom: 20px;
+    width: 100%;
+    /* Garante que o header ocupe a largura total do container */
     padding: 20px;
-    /* border-radius: 10px; */
-    background: linear-gradient(to right, #DCDDDE, #866049); /* Fundo fumê verde para transparente */
-    padding: 20px; /* Ajuste conforme necessário para espaçamento interno */
+    /* Adiciona algum espaçamento ao redor do texto */
+    background: linear-gradient(to right, transparent, #b6a175);
+    /* Gradiente da esquerda para a direita */
+    animation: slideIn 1.5s ease-out;
+    /* Animação de deslize e surgimento */
+    color: #fff;
 }
 
 #eco_name {
-    color: rgb(48, 45, 45); /* Define o texto como branco */
+    color: rgb(255, 255, 255); /* Define o texto como branco */
     margin: 0; /* Remove margens padrão */
     text-align: center; /* Centraliza o texto */
     font-size: xx-large;
+    margin-bottom: 10px;
+    font-weight: bold;
+    /* Negrito para um visual mais forte */
+    color: #ffffff;
+    /* Cor do texto */
+    text-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
 }
 
 

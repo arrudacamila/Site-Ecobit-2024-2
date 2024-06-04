@@ -211,5 +211,9 @@ h2.user-name:hover{
   padding: 15px;
   background-color: #2D6B51;
   border-radius: 5px;
+}
 
+.nav-link1:hover{
+  background-color: #47a57e;
+  color: #000000;
 }

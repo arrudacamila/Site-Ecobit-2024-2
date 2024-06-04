@@ -14,7 +14,8 @@ function EcoDetalhes() {
     const mapRef = useRef(null);
     const [mapLoading, setMapLoading] = useState(true);
     const [ponto, setPonto] = useState(null);
-    
+    const [map, setMap] = useState(null);
+
     // Use useParams para obter o parâmetro de ID da rota
     const { id } = useParams();
 
@@ -26,35 +27,34 @@ function EcoDetalhes() {
         axios.get(`http://localhost:8080/getPontoId/${Id}`)
             .then(response => {
                 setPonto(response.data);
-                initMap(response.data.endererecoPonto);
+                initMap(response.data.endererecoPonto, response.data.nomePonto);
             })
             .catch(error => {
                 console.error('Erro ao buscar detalhes do ponto:', error);
             });
     };
 
-    const initMap = (endereco) => {
+    const initMap = (endereco, nomePonto) => {
         const geocoder = new window.google.maps.Geocoder();
 
         geocoder.geocode({ address: endereco }, (results, status) => {
             if (status === 'OK' && results[0]) {
                 const { lat, lng } = results[0].geometry.location;
 
-                const map = new window.google.maps.Map(mapRef.current, {
+                const newMap = new window.google.maps.Map(mapRef.current, {
                     center: { lat: lat(), lng: lng() },
                     zoom: 17.1,
                     disableDefaultUI: true,
                     draggable: false,
                 });
 
-                if (ponto) {
-                    new window.google.maps.Marker({
-                        position: { lat: lat(), lng: lng() },
-                        map: map,
-                        title: ponto.nomePonto,
-                    });
-                }
+                new window.google.maps.Marker({
+                    position: { lat: lat(), lng: lng() },
+                    map: newMap,
+                    title: nomePonto,
+                });
 
+                setMap(newMap);
                 setMapLoading(false);
             } else {
                 console.error('Geocode falhou devido a:', status);
@@ -76,7 +76,7 @@ function EcoDetalhes() {
                     </div>
                     <div className="description">
                         <p className="title">Endereço:</p>
-                        <p id="adress">{ponto ? ponto.endererecoPonto : 'Carregando...'}</p>
+                        <p id="address">{ponto ? ponto.endererecoPonto : 'Carregando...'}</p>
                         <p className="title">CEP:</p>
                         <p>{ponto ? ponto.numeroPonto : 'Carregando...'}</p>
                         <p>{ponto ? ponto.cep : 'Carregando...'}</p>
