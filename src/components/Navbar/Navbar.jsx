@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import Logo from "../../img/nav-logo.png";
 import { BsPersonFill, BsDoorOpen } from "react-icons/bs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightToBracket } from "@fortawesome/free-solid-svg-icons";
 
 function EcoNav() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -29,7 +31,7 @@ function EcoNav() {
   useEffect(() => {
     const id = localStorage.getItem("id");
     setIsLoggedIn(!!id);
-    if (id === "665f32ba31dc0a68398f15b4") {
+    if (id === "665b7e0f066d7e7f041c82e2") {
       setIsAdmin(true);
     }
 
@@ -68,7 +70,7 @@ function EcoNav() {
         <div className="navbar-collapse" id="navbar-collapse">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink to={isLoggedIn ? "/" : "/LoginHome"} className="nav-link" activeClassName="active" exact>
+              <NavLink to={isLoggedIn ? "/" : "/"} className="nav-link" activeClassName="active" exact>
                 Home
               </NavLink>
             </li>
@@ -77,13 +79,12 @@ function EcoNav() {
                 Ecopontos
               </NavLink>
             </li>
-            {isLoggedIn && (
-              <li className="nav-item">
+            <li className="nav-item">
                 <NavLink to="/Donation" className="nav-link" activeClassName="active">
                   Produtos
                 </NavLink>
               </li>
-            )}
+          
             {isAdmin && (
               <li className="nav-item">
                 <NavLink to="/EcopontoForm" className="nav-link" activeClassName="active">
@@ -109,8 +110,8 @@ function EcoNav() {
                 </div>
               </div>
             ) : (
-              <NavLink to="/Register" className="nav-link" activeClassName="active">
-                Entrar
+              <NavLink to="/Register" className="nav-link1" activeClassName="active">
+                 <FontAwesomeIcon icon={faArrowRightToBracket} /> Entrar
               </NavLink>
             )}
           </div>

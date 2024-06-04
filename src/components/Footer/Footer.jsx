@@ -6,13 +6,15 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <div className="footer-section about">
-          <h1>ECOBIT</h1>
+        <div>
+        <h1>ECOBIT</h1>
           <p className="footer-slogan">"Contribuindo para um futuro melhor"</p>
           <p>Fatec Luigi Papaiz, Diadema</p>
+        </div>
+          <div>
           <p>+55 1199999-9999</p>
           <p>contato@ecobit.com</p>
-        </div>
+          </div>
         <div className="footer-social">
           <div className="footer-social-icons">
             <a

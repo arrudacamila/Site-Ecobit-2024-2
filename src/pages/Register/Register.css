@@ -47,7 +47,7 @@
 }
 
 .container button {
-    background-color: #37a82d;
+    background-color: #2D6B51;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -141,7 +141,7 @@
 }
 
 .social-icons a:hover {
-    background-color: #37a82d;
+    background-color: #2D6B51;
     color: #eee;
 }
 
@@ -177,7 +177,7 @@
 .toggle {
     background-color: #512da8;
     height: 100%;
-    background: linear-gradient(to right, #5cc086, #37a82d);
+    background: linear-gradient(to right, #5cc086, #2D6B51);
     color: #fff;
     position: relative;
     left: -100%;
@@ -224,7 +224,7 @@
 }
 
 .message {
-    color: green;
+    color: #2D6B51;
     margin-top: 20px;
 }
 
@@ -257,7 +257,7 @@
 
 .modal-icon {
     font-size: 3rem;
-    color: green; /* Cor do ícone de sucesso */
+    color: #2D6B51; /* Cor do ícone de sucesso */
 }
 
 .modal-icon-error{
@@ -270,5 +270,5 @@
 }
 
 .modal-register button:hover{
-    background-color: green;
+    background-color: #2D6B51;
 }

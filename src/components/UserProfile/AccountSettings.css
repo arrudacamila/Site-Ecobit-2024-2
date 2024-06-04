@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
+    box-shadow: 8px 10px 3px rgba(0, 0, 0, 0.1)
 }
 
 
@@ -36,7 +37,7 @@
 .accountsettings .form .form-group input{
     padding: 10px 20px;
     border: 1px solid rgb(207, 207, 207);
-    border-radius: 5px;
+    border-radius: 15px;
     outline: none;
 }
 
@@ -45,7 +46,7 @@
 }
 
 .accountsettings button{
-    background-color: #37a82d;
+    background-color: #0F401F;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -61,7 +62,9 @@
 }
 
 .accountsettings button:hover{
-    background-color: #27791f;
+    transition: 0.3s;
+    background-color: rgba(96, 184, 130, 0.479);
+    color: #0a0909;
 }
 
 

@@ -204,3 +204,12 @@ h2.user-name:hover{
   color: #1c1c1c;
 
 }
+.nav-link1{
+  color: #D6D5D1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 15px;
+  background-color: #2D6B51;
+  border-radius: 5px;
+
+}

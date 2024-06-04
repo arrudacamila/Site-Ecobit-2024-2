@@ -4,17 +4,17 @@
 .footer {
    background-color: #8b5e3c;
    color: #ffffff;
-   padding: 40px 20px;
    font-family: Arial, sans-serif;
-   text-align: center; /* Centralizando texto no footer */
+   text-align: center; 
+   padding: 20px;/* Centralizando texto no footer */
 }
 
 .footer-content {
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
    align-items: center;
    gap: 20px; /* Espaço entre os elementos */
-   padding: 20px;
+   justify-content: space-around;
 }
 
 .footer-section {
@@ -34,6 +34,7 @@
    font-style: italic; /* Estilizando o slogan em itálico */
    font-family: 'Roboto Slab', serif; /* Aplicando a nova fonte */
    font-size: 1.2em; /* Ajustando o tamanho da fonte */
+   padding-top: 5px;
 }
 
 .footer-social {
@@ -59,7 +60,6 @@
 
 .footer-bottom {
    text-align: center;
-   padding: 20px 0;
    border-top: 1px solid #cccccc;
 }
 
