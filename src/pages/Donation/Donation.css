@@ -56,9 +56,10 @@
 }
 
 .newDonation {
+
     position: relative;
     display: inline-block;
-    background-color: #37a82d;
+    background-color: #0F401F;
     color: #fff;
     font-size: 14px;
     padding: 15px 20px;

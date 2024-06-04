@@ -57,7 +57,7 @@ function Home() {
             <b className="about-title">Itens mais Doados</b>
           </h3>
           <p className="about-description">Seja um doador ou aquele que quer a doação</p>
-          <Button />
+          <Button path={"/Donation"} />
         </div>
         <div className="blocos">
           <div className="destaques">
@@ -162,7 +162,7 @@ function Home() {
         </div>
         </section>
         <div className="but-baixo">
-        <Button />
+        <Button path={"/Ecopontos"} />
         </div>
         
       </section>

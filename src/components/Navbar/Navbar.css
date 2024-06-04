@@ -6,6 +6,7 @@
   z-index: 9999;
   transition: all 0.3s ease;
   padding: 20px 0;
+  box-shadow: 0px 4px 13px -2px #000000;
 }
 
 .custom-navbar .navbar-container {
@@ -168,6 +169,7 @@ body {
   display: flex;
   align-items: center; /* Centraliza verticalmente */
   gap: 15px;
+
 }
 
 .user-name {
@@ -196,19 +198,22 @@ body {
 }
 
 h2.user-name{
-  color: #969595;
+  color: #696868;
+  text-decoration:underline;
+  border-radius: 5px;
+
 }
 
 h2.user-name:hover{
-  transition: 1s;
+  transition: 0.5s;
   color: #1c1c1c;
-
 }
+
 .nav-link1{
   color: #D6D5D1;
   text-decoration: none;
   transition: all 0.3s ease;
-  padding: 15px;
+  padding: 10px;
   background-color: #2D6B51;
   border-radius: 5px;
 

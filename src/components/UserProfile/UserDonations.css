@@ -49,16 +49,17 @@
   width: 100px;
   height: 40px; /* Altura fixa para o botão */
   padding: 10px;
-  background-color: green;
-  border: 2px solid green;
+  background-color: #0F401F;
+  border: 2px solid ;
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  margin: 0 auto; /* Centraliza o botão horizontalmente */
+  margin: 0 auto;
+  margin-top: 15px; /* Centraliza o botão horizontalmente */
 }
 
 .edit-button:hover {
-  background-color: white;
-  color: green;
+  background-color: rgba(96, 184, 130, 0.479);
+  color: #25861c;
   font-weight: 600;
 }

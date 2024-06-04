@@ -57,7 +57,7 @@
     padding: 8px;
     border: none;
     border-radius: 5px;
-    background-color: #195813;
+    background-color: #0F401F;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -68,7 +68,8 @@
 }
 
 .ProductForm-forms-submit-btn:hover {
-    background-color: #25861c;
+    background-color: rgba(96, 184, 130, 0.479);
+    color: #25861c;
 }
 
 input[type="number"],
