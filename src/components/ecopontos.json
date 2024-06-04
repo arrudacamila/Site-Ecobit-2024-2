@@ -14,87 +14,80 @@
         "sabado": "* Aberto aos Sábados"
     },
     {
-        "nome": "Ecoponto Marginal “Z”",
-        "endereço": "Avenida Daniel José de Carvalho, 330",
-        "bairro": "Parque Real",
-        "cidade": "Diadema",
-        "cep": "09992-110",
+        "nomePonto": "Ecoponto Marginal “Z”",
+        "enderecoPonto": "Avenida Daniel José de Carvalho, 330",
+        "numeroPonto": "09992-110",
+        "materiaisPonto": "",
         "sabado": "* Aberto aos Sábados"
     },
     {
-        "nome": "Ecoponto Nações",
-        "endereço": "Rua Espanha c/ Avenida Dom João VI",
-        "bairro": "Taboão",
-        "cidade": "Diadema",
-        "cep": "09941-010",
+        "nomePonto": "Ecoponto Nações",
+        "enderecoPonto": "Rua Espanha c/ Avenida Dom João VI",
+        "numeroPonto": "09941-010",
+        "materiaisPonto": "",
         "sabado": "* Aberto aos Sábados"
     },
     {
-        "nome": "Ecoponto Naval",
-        "endereço": "Rua Idealópolis c/ Avenida Corredor ABD, s/nº",
-        "bairro": "Vila São José",
-        "cidade": "Diadema",
-        "cep": "09950-580",
+        "nomePonto": "Ecoponto Naval",
+        "enderecoPonto": "Rua Idealópolis c/ Avenida Corredor ABD, s/nº",
+        "numeroPonto": "09950-580",
+        "materiaisPonto": "",
         "sabado": "* Aberto aos Sábados"
     },
     {
-        "nome": "Ecoponto Rufino",
-        "endereço": "Estrada do Rufino, 1.059",
-        "bairro": "Serraria",
-        "cidade": "Diadema",
-        "cep": "09980-280",
+        "nomePonto": "Ecoponto Rufino",
+        "enderecoPonto": "Estrada do Rufino, 1.059",
+        "numeroPonto": "09980-280",
+        "materiaisPonto": "",
         "sabado": "* Aberto aos Sábados"
     },
     {
-        "nome": "Ecoponto Yamagata",
-        "endereço": "Rua Yamagata c/ Rua Osaka, s/nº",
-        "bairro": "Jardim Canhema",
-        "cidade": "Diadema",
-        "cep": "09940-220",
+        "nomePonto": "Ecoponto Yamagata",
+        "enderecoPonto": "Rua Yamagata c/ Rua Osaka, s/nº",
+        "numeroPonto": "09940-220",
+        "materiaisPonto": "",
         "sabado": "* Aberto aos Sábados"
     },
     {
-        "nome": "Ecoponto João Batista (Vila Nogueira)",
-        "endereço": "Rua João Batista Alves do Nascimento, 546",
-        "bairro": "Vila Nogueira",
-        "cidade": "Diadema",
-        "cep": "04905-020",
+        "nomePonto": "Ecoponto João Batista (Vila Nogueira)",
+        "enderecoPonto": "Rua João Batista Alves do Nascimento, 546",
+        "numeroPonto": "04905-020",
+        "materiaisPonto": "",
         "sabado": "* Aberto aos Sábados"
     },
     {
-        "nome": "Ecoponto DLU",
-        "endereço": "Avenida Pirâmide, 844",
-        "bairro": "Jardim Inamar",
-        "cidade": "Diadema",
-        "cep": "09970-330",
+        "nomePonto": "Ecoponto DLU",
+        "enderecoPonto": "Avenida Pirâmide, 844",
+        "numeroPonto": "09970-330",
+        "materiaisPonto": "",
         "sabado": "* Aberto aos Sábados"
     },
     {
-        "nome": "Ecoponto Caracas",
-        "endereço": "Rua Caracas, 120",
-        "bairro": "Vila Mulford",
-        "cidade": "Diadema",
-        "cep": "09921-000"
+        "nomePonto": "Ecoponto Caracas",
+        "enderecoPonto": "Rua Caracas, 120",
+        "numeroPonto": "09921-000",
+        "materiaisPonto": "",
+        "sabado": ""
     },
     {
-        "nome": "Ecoponto Nova Conquista",
-        "endereço": "Travessa ETCD, 210 – Vila Nova Conquista",
-        "bairro": "Piraporinha",
-        "cidade": "Diadema",
-        "cep": "09950690"
+        "nomePonto": "Ecoponto Nova Conquista",
+        "enderecoPonto": "Travessa ETCD, 210 – Vila Nova Conquista",
+        "numeroPonto": "09950-690",
+        "materiaisPonto": "",
+        "sabado": ""
     },
     {
-        "nome": "Ecoponto Okavango – Casa Grande",
-        "endereço": "Avenida Casa Grande, 1810",
-        "bairro": "Jardim Casa Grande",
-        "cidade": "Diadema",
-        "cep": "09960-590"
+        "nomePonto": "Ecoponto Okavango – Casa Grande",
+        "enderecoPonto": "Avenida Casa Grande, 1810",
+        "numeroPonto": "09960-590",
+        "materiaisPonto": "",
+        "sabado": ""
     },
     {
-        "nome": "Ecoponto Maria Leonor – Parque Reid / Campanário",
-        "endereço": "Avenida Maria Leonor",
-        "bairro": "Campanário",
-        "cidade": "Diadema",
-        "cep": "09920-080"
+        "nomePonto": "Ecoponto Maria Leonor – Parque Reid / Campanário",
+        "enderecoPonto": "Avenida Maria Leonor",
+        "numeroPonto": "09920-080",
+        "materiaisPonto": "",
+        "sabado": ""
     }
-    ]
+]
