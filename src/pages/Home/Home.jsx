@@ -6,6 +6,23 @@ import Icon from "../../components/HOME/Icons/Icons.jsx";
 import FloatingButton from "../../components/FloatingButton/FloatingButton.jsx";
 import { useEffect , useState } from "react";
 
+function ImageTitleDescription({
+  imgSrc,
+  alt,
+  title,
+  description,
+  className,
+  containerClassName,
+}) {
+  return (
+    <div className={containerClassName}>
+      <img src={imgSrc} alt={alt} className={className} />
+      <div className="title">{title}</div>
+      <div className="description">{description}</div>
+    </div>
+  );
+}
+
 function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
@@ -37,9 +54,9 @@ function Home() {
       <section className="gridHome">
         <div className="maisDoado">
           <h3>
-            <b>Itens mais Doados</b>
+            <b className="about-title">Itens mais Doados</b>
           </h3>
-          <p>Seja um doador ou aquele que quer a doação</p>
+          <p className="about-description">Seja um doador ou aquele que quer a doação</p>
           <Button />
         </div>
         <div className="blocos">
@@ -51,7 +68,7 @@ function Home() {
                 alt="fotoHome1"
               />
             </div>
-            <h6>Roupas</h6>
+            <h6 className="about-description">Roupas</h6>
           </div>
           <div className="destaques">
             <div>
@@ -61,7 +78,7 @@ function Home() {
                 alt="fotoHome2"
               />
             </div>
-            <h6>Roupas</h6>
+            <h6 className="about-description">Móveis</h6>
           </div>
           <div className="destaques">
             <div>
@@ -71,41 +88,83 @@ function Home() {
                 alt="fotoHome3"
               />
             </div>
-            <h6>Roupas</h6>
+            <h6 className="about-description">Eletrodoméstico</h6>
           </div>
         </div>
       </section>
       <section>
-        <div>
-          <h4>Sobre</h4>
-          <p>Plataforma para achar o destino correto para sua coisas paradas</p>
+      <section className="about1">
+          <header className="about-header">
+            <h2 className="about-title">Sobre</h2>
+            <p className="about-description">
+              Plataforma para achar o destino correto para suas coisas paradas
+            </p>
+          </header>
+          <section className="about-content">
+            <ImageTitleDescription
+              imgSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/e171bf44d2714de163bb056f3f7228516a057f99e2b814fa7ab73ad8b974d761?apiKey=ef4aee14eef14d0085cea41906673191&"
+              alt="Ajude o planeta Image"
+              title="Ajude o planta"
+              description="Recicle aqueles materiais e lixos que você não sabe o destino correto"
+              className="about-image"
+              containerClassName="about-item"
+            />
+            <ImageTitleDescription
+              imgSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/96af7e33813a52b43724d20e6017665ba98cf1ab4e2a9484e5c9a5e3f60367dd?apiKey=ef4aee14eef14d0085cea41906673191&"
+              alt="Empacote Image"
+              title="Empacote"
+              description="Encontre o local correto e as pessoas que precisam da sua doação"
+              className="about-image"
+              containerClassName="about-item"
+            />
+            <ImageTitleDescription
+              imgSrc="https://cdn.builder.io/api/v1/image/assets/TEMP/aafa57c6cd9f1e729548bdd9b390a1ac0f3fd3e51be81b0fdfe50304a382398f?apiKey=ef4aee14eef14d0085cea41906673191&"
+              alt="Procure Image"
+              title="Procure"
+              description="Procure por doações disponível, ONGs e local de coleta do município"
+              className="about-image"
+              containerClassName="about-item"
+            />
+          </section>
+        </section>
+        <section className="eco">
+        <div className="blocos2">
+          <div className="destaques">
+            <div>
+              <img
+                className="imgdestaques"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/43cee0aefc2eba344d99c27fbd275f8902076b65615e62302f9d3b1ffcdc712e?apiKey=ef4aee14eef14d0085cea41906673191&"
+                alt="fotoHome1"
+              />
+            </div>
+            <h6 className="about-description">Ponto de Coletas</h6>
+          </div>
+          <div className="destaques">
+            <div>
+              <img
+                className="imgdestaques"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8a550c50e97a23c913d8303c5d4feb2f341516b6b8b03c2bd8c57569dc45447?apiKey=ef4aee14eef14d0085cea41906673191&"
+                alt="fotoHome2"
+              />
+            </div>
+            <h6 className="about-description">Coleta seletiva</h6>
+          </div>
+          <div className="destaques">
+            <div>
+              <img
+                className="imgdestaques"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/b5b1f3164c0ed60be8ecd6327df43a926d018d7c77b6d38190ede97218e70476?apiKey=ef4aee14eef14d0085cea41906673191&"
+                alt="fotoHome3"
+              />
+            </div>
+            <h6 className="about-description">Ecopontos</h6>
+          </div>
         </div>
-        <div className="Icons">
-          <div className="text-icon">
-            <Icon />
-            <h5>Ajude o planta</h5>
-            <p>
-              Recicle aqueles materiais e lixos que você não sabe o destino
-              correto
-            </p>
-          </div>
-          <div className="text-icon">
-            <Icon />
-            <h5>Empacote </h5>
-            <p>
-              Encontre o local correto e as pessoas que precisam da sua doação
-            </p>
-          </div>
-          <div className="text-icon">
-            <Icon />
-            <h5>Procure</h5>
-            <p className="texto-do-icon">
-              Procure por doações disponível, ONGs e local de coleta do
-              município
-            </p>
-          </div>
+        </section>
+        <div className="but-baixo">
+        <Button />
         </div>
-        {isLoggedIn ? <FloatingButton /> : ""}
+        
       </section>
       <Footer />
     </div>

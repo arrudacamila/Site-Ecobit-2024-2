@@ -3,6 +3,10 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  background-color: #DCDDDE;
+  padding: 0;
+  padding-top: 1.7vh;
+  padding-bottom: 50px;
 }
 
 .app {
@@ -31,10 +35,10 @@
   padding: 20px; /* Adiciona algum espaçamento ao redor do texto */
   background: linear-gradient(
     to right,
-    transparent,
-    #b6a175
+    #DCDDDE,
+    #866049  
   ); /* Gradiente da esquerda para a direita */
-  border-radius: 10px; /* Bordas arredondadas para um visual moderno */
+  /* border-radius: 10px;  */
   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   animation: slideIn 1.5s ease-out; /* Animação de deslize e surgimento */
 }

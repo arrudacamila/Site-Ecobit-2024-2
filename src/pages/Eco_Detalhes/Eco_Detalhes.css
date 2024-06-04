@@ -17,12 +17,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to bottom, #25861c, #c2c95d00); /* Fundo fumê verde para transparente */
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #DCDDDE, #866049); /* Fundo fumê verde para transparente */
     padding: 20px; /* Ajuste conforme necessário para espaçamento interno */
 }
 
 #eco_name {
-    color: rgb(255, 255, 255); /* Define o texto como branco */
+    color: rgb(48, 45, 45); /* Define o texto como branco */
     margin: 0; /* Remove margens padrão */
     text-align: center; /* Centraliza o texto */
     font-size: xx-large;

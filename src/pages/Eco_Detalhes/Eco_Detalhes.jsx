@@ -1,19 +1,39 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import EcoNav from '../../components/Navbar/Navbar';
-import Footer from '../../components/Footer/Footer.jsx'
-import Loading from '../../components/Loading/Loading'; // Importe o componente Loading
-import "./Eco_Detalhes.css"
+import Footer from '../../components/Footer/Footer.jsx';
+import Loading from '../../components/Loading/Loading';
+import axios from 'axios'; 
+import "./Eco_Detalhes.css";
 
 function EcoDetalhes() {
-    const mapRef = useRef(null);
-    const [mapLoading, setMapLoading] = useState(true); // Estado para controlar o carregamento do mapa
-
     useEffect(() => {
-        initMap();
+        window.scrollTo(0, 0);
     }, []);
 
-    const initMap = () => {
-        const endereco = document.getElementById("adress").textContent;
+    const mapRef = useRef(null);
+    const [mapLoading, setMapLoading] = useState(true);
+    const [ponto, setPonto] = useState(null);
+    
+    // Use useParams para obter o parâmetro de ID da rota
+    const { id } = useParams();
+
+    useEffect(() => {
+        fetchPontoDetails(id); // Use o ID da rota para buscar os detalhes do ponto
+    }, [id]);
+
+    const fetchPontoDetails = (Id) => {
+        axios.get(`http://localhost:8080/getPontoId/${Id}`)
+            .then(response => {
+                setPonto(response.data);
+                initMap(response.data.endererecoPonto);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar detalhes do ponto:', error);
+            });
+    };
+
+    const initMap = (endereco) => {
         const geocoder = new window.google.maps.Geocoder();
 
         geocoder.geocode({ address: endereco }, (results, status) => {
@@ -27,13 +47,14 @@ function EcoDetalhes() {
                     draggable: false,
                 });
 
-                const marker = new window.google.maps.Marker({
-                    position: { lat: lat(), lng: lng() },
-                    map: map,
-                    title: 'Nome do Ecoponto',
-                });
+                if (ponto) {
+                    new window.google.maps.Marker({
+                        position: { lat: lat(), lng: lng() },
+                        map: map,
+                        title: ponto.nomePonto,
+                    });
+                }
 
-                // Define o estado do mapa como carregado
                 setMapLoading(false);
             } else {
                 console.error('Geocode falhou devido a:', status);
@@ -45,7 +66,7 @@ function EcoDetalhes() {
         <div className='eco-container'>
             <EcoNav />
             <div className='eco-header'>
-                <h2 id="eco_name">Ecoponto João Batista (Vila Nogueira)</h2>
+                <h2 id="eco_name">{ponto ? ponto.nomePonto : 'Carregando...'}</h2>
             </div>
             <div className="det_body">
                 <div className="details-container">
@@ -55,10 +76,11 @@ function EcoDetalhes() {
                     </div>
                     <div className="description">
                         <p className="title">Endereço:</p>
-                        <p id="adress">Rua João Batista Alves do Nascimento, 546 Vila Nogueira - Diadema - São Paulo</p>
+                        <p id="adress">{ponto ? ponto.endererecoPonto : 'Carregando...'}</p>
                         <p className="title">CEP:</p>
-                        <p>04905-020</p>
-                        <p className="note">*Aberto aos Sábados</p>
+                        <p>{ponto ? ponto.numeroPonto : 'Carregando...'}</p>
+                        <p>{ponto ? ponto.cep : 'Carregando...'}</p>
+                        <p className="note">{ponto && ponto.abertoSabado ? ponto.abertoSabado : ''}</p>
                     </div>
                 </div>
             </div>

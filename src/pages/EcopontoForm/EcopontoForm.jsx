@@ -44,7 +44,7 @@ function EcopontoForm() {
             materiasPonto: materiaisPonto,
             endererecoPonto: enderecoPonto,
             numeroPonto: numeroPonto,
-            abertoSabado: abertoSabado === 'sim'
+            abertoSabado: abertoSabado
         };
 
         try {
