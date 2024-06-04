@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import EcoNav from "../../components/Navbar/Navbar.jsx";
 import "./ProductForm.css";
 import { FaCheckCircle, FaRegSmileWink } from 'react-icons/fa';
@@ -11,8 +12,10 @@ function ProductForm() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+    
+    const navigate = useNavigate();
 
-    const user = localStorage.getItem("id");
+    const userId = localStorage.getItem("id");
     const [images, setImages] = useState([]);
     const [quantidade, setQuantidade] = useState('');
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
@@ -110,7 +113,7 @@ function ProductForm() {
         const imagensBase64 = images.map(image => image.src);
 
         const doacao = {
-            user,
+            userId,
             titulo,
             descricao,
             quantidade,
@@ -140,6 +143,9 @@ function ProductForm() {
                 setDisponibilidade('');
                 setTelefone(''); // Limpa o campo de telefone após submissão
                 setAceitoUsoTelefone(false); // Reseta o checkbox após submissão
+            
+                navigate(`/user/accountsettings`)
+                
             }, 2000);
         } catch (error) {
             setError('Erro ao enviar a doação. Por favor, tente novamente.');

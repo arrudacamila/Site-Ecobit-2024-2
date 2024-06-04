@@ -164,7 +164,7 @@ const EditDonation = () => {
                 className="EditForm-forms-input-field-Donation"
                 name="descricao"
                 value={doacao.descricao}
-                readOnly
+                onChange={handleInputChange}
               />
             </div>
 

@@ -36,18 +36,43 @@ function EcopontoForm() {
         setAbertoSabado(event.target.value);
     }
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
         
-        setShowConfirmationModal(true);
-        setTimeout(() => {
-            setShowConfirmationModal(false);
-            setNomePonto('');
-            setMateriaisPonto('');
-            setEnderecoPonto('');
-            setNumeroPonto('');
-            setAbertoSabado('');
-        }, 2000);
+        const pontoData = {
+            nomePonto: nomePonto,
+            materiasPonto: materiaisPonto,
+            endererecoPonto: enderecoPonto,
+            numeroPonto: numeroPonto,
+            abertoSabado: abertoSabado === 'sim'
+        };
+
+        try {
+            const response = await fetch('http://localhost:8080/savePonto', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(pontoData)
+            });
+
+            if (response.ok) {
+                setShowConfirmationModal(true);
+                setTimeout(() => {
+                    setShowConfirmationModal(false);
+                    setNomePonto('');
+                    setMateriaisPonto('');
+                    setEnderecoPonto('');
+                    setNumeroPonto('');
+                    setAbertoSabado('');
+                }, 2000);
+            } else {
+                const errorData = await response.json();
+                console.error('Error:', errorData);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
     }
 
     return (
@@ -61,16 +86,16 @@ function EcopontoForm() {
                     <br />
                     <form onSubmit={handleSubmit}>
                         <div className="EcopontoForm-forms-form-group">
-                            <input type="text" id="nomePonto" className="EcopontoForm-forms-input-field" placeholder="Nome" value={nomePonto} onChange={handleNomeChange} required/>
+                            <input type="text" id="nomePonto" className="EcopontoForm-forms-input-field" placeholder="Nome" value={nomePonto} onChange={handleNomeChange} required />
                         </div>
                         <div className="EcopontoForm-forms-form-group">
-                            <input type="text" id="materiaisPonto" className="EcopontoForm-forms-input-field" placeholder="Material" value={materiaisPonto} onChange={handleMaterialChange} required/>
+                            <input type="text" id="materiaisPonto" className="EcopontoForm-forms-input-field" placeholder="Material" value={materiaisPonto} onChange={handleMaterialChange} required />
                         </div>
                         <div className="EcopontoForm-forms-form-group">
-                            <input type="text" id="enderecoPonto" className="EcopontoForm-forms-input-field" placeholder="Endereço" value={enderecoPonto} onChange={handleEnderecoChange} required/>
+                            <input type="text" id="enderecoPonto" className="EcopontoForm-forms-input-field" placeholder="Endereço" value={enderecoPonto} onChange={handleEnderecoChange} required />
                         </div>
                         <div className="EcopontoForm-forms-form-group">
-                            <input type="text" id="numeroPonto" className="EcopontoForm-forms-input-field" placeholder="Número" value={numeroPonto} onChange={handleNumeroChange} required/>
+                            <input type="text" id="numeroPonto" className="EcopontoForm-forms-input-field" placeholder="Número" value={numeroPonto} onChange={handleNumeroChange} required />
                         </div>
                         <div className="EcopontoForm-forms-form-group">
                             <select id="abertoSabado" className="EcopontoForm-forms-select-field" value={abertoSabado} onChange={handleAbertoSabadoChange} required>

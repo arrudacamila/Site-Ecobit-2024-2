@@ -10,7 +10,8 @@ const AccountSettings = () => {
     telefone: '',
     email: '',
     endereco: '',
-    cep: ''
+    cep: '',
+    senha: ''
   });
 
   useEffect(() => {
@@ -91,6 +92,12 @@ const AccountSettings = () => {
         <div className="form-group">
           <label htmlFor="cep">CEP</label>
           <input type="text" name="cep" id="cep" value={userData.cep} onChange={handleInputChange} />
+        </div>
+
+      
+        <div className="form-group">
+          <label htmlFor="novaSenha">Nova Senha</label>
+          <input type="password" name="senha" id="senha" value={userData.senha} onChange={handleInputChange} />
         </div>
       </div>
 

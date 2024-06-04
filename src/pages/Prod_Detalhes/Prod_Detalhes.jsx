@@ -1,57 +1,77 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import axios from 'axios';
 import EcoNav from "../../components/Navbar/Navbar";
-import "./Prod_Detalhes.css"
-import FloatingButton from "../../components/FloatingButton/FloatingButton"
-import Footer from '../../components/Footer/Footer.jsx'
+import "./Prod_Detalhes.css";
+import FloatingButton from "../../components/FloatingButton/FloatingButton";
+import Footer from '../../components/Footer/Footer.jsx';
 
 function Prod_Detalhes() {
-    return (
-        <div className="prod-detalhes-container">
-            <EcoNav />
-            <div className='Prod_Detalhes'>
-                <div className="card">
-                    <div className="card-content">
-                        <div className="carousel-container">
-                            <Carousel showThumbs={false} infiniteLoop={true} showStatus={false}>
-                                <div>
-                                    <img src="src/img/armario.jpg" alt="Descrição da Imagem 1" />
-                                </div>
-                                <div>
-                                    <img src="src/img/armario2.jpg" alt="Descrição da Imagem 2" />
-                                </div>
-                                <div>
-                                    <img src="src/img/armario3.jpg" alt="Descrição da Imagem 3" />
-                                </div>
-                                <div>
-                                    <img src="src/img/armario4.jpg" alt="Descrição da Imagem 3" />
-                                </div>
-                                <div>
-                                    <img src="src/img/armario5.jpg" alt="Descrição da Imagem 3" />
-                                </div>
-                            </Carousel>
-                        </div>
-                        <div className="text-container">
-                            <h1>Armário Solteiro</h1>
-                            <p>Doa-se guarda roupa solteiro, com 1 ano de uso, está em ótimo estado de conservação. 4 portas 2 gavetas chile moval naturale/branco</p>
-                            <p>altura dos pés: 7 cm
-                                altura (cm): 183 cm
-                                largura (cm): 103 cm
-                                profundidade (cm): 47 cm
-                                peso (kg): 57.59 kg
-                                suporta até (kg): 56 kg</p>
-                            <p>Condição: usado em estado de novo</p>
-                            <p>Disponibilidade para levar: Não</p>
-                            <p><i className='fab fa-whatsapp' /> (11) 9 1234-5678</p>
-                        </div>
-                    </div>
-                </div>
+  const { id } = useParams();
+  const [doacao, setDoacao] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchDoacao = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8080/getDoaId/${id}`);
+        setDoacao(response.data);
+      } catch (error) {
+        console.error("Erro ao buscar a doação:", error);
+        setError("Erro ao buscar a doação. Por favor, tente novamente mais tarde.");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDoacao();
+  }, [id]);
+
+  if (loading) {
+    return <div>Carregando...</div>;
+  }
+
+  if (error) {
+    return <div className="error-message">{error}</div>;
+  }
+
+  return (
+    <div className="prod-detalhes-container">
+      <EcoNav />
+      <div className='Prod_Detalhes'>
+        <div className="card">
+          <div className="card-content">
+            <div className="carousel-container">
+              <Carousel showThumbs={false} infiniteLoop={true} showStatus={false}>
+              {doacao.imagensBase64.map((base64, index) => (
+                      <img
+                        key={index}
+                        src={base64}
+                        alt={`Nova Imagem ${index + 1}`}
+                        className="edit-donation-img-thumbnail"
+                      />
+                    ))}
+              </Carousel>
             </div>
-            <FloatingButton/>
-            <Footer />
+            <div className="text-container">
+              <h1>{doacao.titulo}</h1>
+              <p>{doacao.descricao}</p>
+              <p>Quantidade: {doacao.quantidade}</p>
+              <p>Categoria: {doacao.categoria}</p>
+              <p>Condição: {doacao.condicao}</p>
+              <p>Disponibilidade: {doacao.disponibilidade}</p>
+              <p><i className='fab fa-whatsapp' />Contato: {doacao.telefone}</p>
+            </div>
+          </div>
         </div>
-    )
+      </div>
+      <FloatingButton />
+      <Footer />
+    </div>
+  );
 }
 
 export default Prod_Detalhes;
