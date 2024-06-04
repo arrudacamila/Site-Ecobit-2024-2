@@ -103,7 +103,8 @@
 }
 
 .NavLink {
-  background-color: #37a82d;
+
+  background-color: #0F401F;
   color: #fff;
   font-size: 12px;
   padding: 10px 45px;
@@ -120,5 +121,6 @@
 
 
 .NavLink:hover {
-  background-color: #27791f;
+  background-color: rgba(96, 184, 130, 0.479);
+  color: #25861c;
 }
