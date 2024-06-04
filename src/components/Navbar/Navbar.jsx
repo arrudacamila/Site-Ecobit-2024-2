@@ -31,7 +31,7 @@ function EcoNav() {
   useEffect(() => {
     const id = localStorage.getItem("id");
     setIsLoggedIn(!!id);
-    if (id === "665b7e0f066d7e7f041c82e2") {
+    if (id === "665f5e2c1ddca82b275a70eb") {
       setIsAdmin(true);
     }
 

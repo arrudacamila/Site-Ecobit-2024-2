@@ -4,7 +4,7 @@ import Footer from '../../components/Footer/Footer.jsx';
 import './Donation.css';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
-import Loading from '../../components/Loading/Loading.jsx'
+import Loading from '../../components/Loading/Loading.jsx';
 
 function Donation() {
   const [doacoes, setDoacoes] = useState([]);
@@ -51,6 +51,7 @@ function Donation() {
         <div className='product-container'>
           {doacoes.map(doacao => (
             <div key={doacao.id} className='product-card'>
+               {localStorage.getItem('id') === "id do ADMIN" && <xButton />} {/*----------adicionar aqui o ID do admin-----------------*/}
               <NavLink to={`/Prod_Detalhes/${doacao.id}`}>
                 <div className="image-wrapper">
                 {doacao.imagensBase64.map((base64, index) => (
@@ -64,9 +65,9 @@ function Donation() {
                 </div>
               </NavLink>
               <h2>{doacao.titulo}</h2>
-              <p>{doacao.condicao} 
+              <p>{doacao.condicao}
                         <br/>
-                    Quantidade: 
+                    Quantidade:
                 {doacao.quantidade}</p>
               <NavLink to={`/Prod_Detalhes/${doacao.id}`} className='NavLink'>Detalhes</NavLink>
             </div>
