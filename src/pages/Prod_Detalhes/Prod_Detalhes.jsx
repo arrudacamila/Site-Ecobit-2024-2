@@ -67,12 +67,19 @@ function Prod_Detalhes() {
             </div>
             <div className="text-container">
               <h1>{doacao.titulo}</h1>
+              <br />
+              <h4>Descricao: </h4>
               <p>{doacao.descricao}</p>
+              <br></br>
               <p>Quantidade: {doacao.quantidade}</p>
+              <br></br>
               <p>Categoria: {doacao.categoria}</p>
+              <br></br>
               <p>Condição: {doacao.condicao}</p>
+              <br></br>
               <p>Disponibilidade: {doacao.disponibilidade}</p>
               <p>
+                <br></br>
                 <i className="fab fa-whatsapp" />
                 Contato: {doacao.telefone}
               </p>

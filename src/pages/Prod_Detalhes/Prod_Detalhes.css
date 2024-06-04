@@ -24,7 +24,7 @@
 
 .prod-card-content {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 30px; /* Ajuste conforme necessário */
 }
 
@@ -52,7 +52,7 @@
 
 .text-container {
     flex-grow: 1;
-    max-width: calc(100% - 640px); /* Ajustado para refletir o aumento da largura do carrossel */
+    /* Ajustado para refletir o aumento da largura do carrossel */
 }
 
 .text-container h1 {
