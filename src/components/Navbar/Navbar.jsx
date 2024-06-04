@@ -29,7 +29,7 @@ function EcoNav() {
   useEffect(() => {
     const id = localStorage.getItem("id");
     setIsLoggedIn(!!id);
-    if (id === "665b7e0f066d7e7f041c82e2") {
+    if (id === "665b8ab700c45758228ec303") {
       setIsAdmin(true);
     }
 
@@ -59,7 +59,7 @@ function EcoNav() {
   return (
     <nav className="custom-navbar">
       <div className="navbar-container">
-        <a href="/" className="navbar-brand">
+        <a href={isLoggedIn || isAdmin ? "/LoginHome" : "/"} className="navbar-brand">
           <img src={Logo} alt="Logo" />
         </a>
         <div className="navbar-toggle" id="navbar-toggle">
@@ -68,7 +68,7 @@ function EcoNav() {
         <div className="navbar-collapse" id="navbar-collapse">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink to={isLoggedIn ? "/" : "/LoginHome"} className="nav-link" activeClassName="active" exact>
+              <NavLink to={isLoggedIn || isAdmin ? "/LoginHome" : "/"} className="nav-link" activeClassName="active" exact>
                 Home
               </NavLink>
             </li>

@@ -13,7 +13,7 @@ function Ecopontos() {
     useEffect(() => {
         const id = localStorage.getItem("id");
         setIsLoggedIn(!!id);
-        if (id === "2") {
+        if (id === "665e70e53e667940bafdec8d") {
           setIsAdmin(true);
         }
       }, []);

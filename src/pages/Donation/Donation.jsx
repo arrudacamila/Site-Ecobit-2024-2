@@ -4,6 +4,7 @@ import Footer from '../../components/Footer/Footer.jsx';
 import './Donation.css';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
+import Loading from '../../components/Loading/Loading.jsx'
 
 function Donation() {
   const [doacoes, setDoacoes] = useState([]);
@@ -29,7 +30,7 @@ function Donation() {
   }, []);
 
   if (loading) {
-    return <div>Carregando...</div>;
+    return <Loading />;
   }
 
   if (error) {

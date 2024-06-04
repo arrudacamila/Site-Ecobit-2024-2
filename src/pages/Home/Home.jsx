@@ -1,12 +1,23 @@
 import EcoNav from "../../components/Navbar/Navbar.jsx";
-import Footer from '../../components/Footer/Footer.jsx'
+import Footer from "../../components/Footer/Footer.jsx";
 import "./Home.css";
 import Button from "../../components/HOME/Button/Button.jsx";
 import Icon from "../../components/HOME/Icons/Icons.jsx";
 import FloatingButton from "../../components/FloatingButton/FloatingButton.jsx";
-import { useEffect } from "react";
+import { useEffect , useState } from "react";
 
 function Home() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    const id = localStorage.getItem("id");
+    setIsLoggedIn(!!id);
+    if (id === "2") {
+      setIsAdmin(true);
+    }
+  }, []);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -94,7 +105,7 @@ function Home() {
             </p>
           </div>
         </div>
-        <FloatingButton />
+        {isLoggedIn ? <FloatingButton /> : ""}
       </section>
       <Footer />
     </div>
