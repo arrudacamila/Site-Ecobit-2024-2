@@ -22,7 +22,7 @@ function AppRoutes() {
                 <Route path="/User/:activepage" element={<UserProfile />} />
                 <Route path="/EditDonation/:Id" element={<EditDonation />} />
                 <Route path="/User/user-donations" element={<UserDonations />} />
-                <Route path="/Eco_Detalhes" element={<Eco_Detalhes />} />
+                <Route path="/Eco_Detalhes/:id" element={<Eco_Detalhes />} />
                 <Route path="/ProductForm" element={<ProductForm />} />
                 <Route path="/Register" element={<Register />} />
                 <Route path="/Ecopontos" element={<Ecopontos />} />

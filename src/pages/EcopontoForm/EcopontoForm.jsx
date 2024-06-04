@@ -95,13 +95,13 @@ function EcopontoForm() {
                             <input type="text" id="enderecoPonto" className="EcopontoForm-forms-input-field" placeholder="Endereço" value={enderecoPonto} onChange={handleEnderecoChange} required />
                         </div>
                         <div className="EcopontoForm-forms-form-group">
-                            <input type="text" id="numeroPonto" className="EcopontoForm-forms-input-field" placeholder="Número" value={numeroPonto} onChange={handleNumeroChange} required />
+                            <input type="text" id="numeroPonto" className="EcopontoForm-forms-input-field" placeholder="CEP" value={numeroPonto} onChange={handleNumeroChange} required />
                         </div>
                         <div className="EcopontoForm-forms-form-group">
                             <select id="abertoSabado" className="EcopontoForm-forms-select-field" value={abertoSabado} onChange={handleAbertoSabadoChange} required>
                                 <option value="" disabled>Abre aos sábados?</option>
-                                <option value="sim">Sim</option>
-                                <option value="nao">Não</option>
+                                <option value="Aberto aos Sábados">Sim</option>
+                                <option value="Fechado aos Sábados">Não</option>
                             </select>
                         </div>
                         <input type="submit" value="Enviar" className="EcopontoForm-forms-submit-btn" />

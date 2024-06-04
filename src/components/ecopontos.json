@@ -1,0 +1,100 @@
+[
+    {
+        "nomePonto": "Ecoponto Arco-Íris",
+        "enderecoPonto": "Rua Mozart, s/nº",
+        "numeroPonto": "09960-590",
+        "materiaisPonto":"",
+        "sabado": "* Aberto aos Sábados"
+    },
+    {
+        "nomePonto": "Ecoponto Arraia",
+        "enderecoPonto": "Rua Arraia, 50",
+        "numeroPonto": "09972-070",
+        "materiaisPonto": "",
+        "sabado": "* Aberto aos Sábados"
+    },
+    {
+        "nome": "Ecoponto Marginal “Z”",
+        "endereço": "Avenida Daniel José de Carvalho, 330",
+        "bairro": "Parque Real",
+        "cidade": "Diadema",
+        "cep": "09992-110",
+        "sabado": "* Aberto aos Sábados"
+    },
+    {
+        "nome": "Ecoponto Nações",
+        "endereço": "Rua Espanha c/ Avenida Dom João VI",
+        "bairro": "Taboão",
+        "cidade": "Diadema",
+        "cep": "09941-010",
+        "sabado": "* Aberto aos Sábados"
+    },
+    {
+        "nome": "Ecoponto Naval",
+        "endereço": "Rua Idealópolis c/ Avenida Corredor ABD, s/nº",
+        "bairro": "Vila São José",
+        "cidade": "Diadema",
+        "cep": "09950-580",
+        "sabado": "* Aberto aos Sábados"
+    },
+    {
+        "nome": "Ecoponto Rufino",
+        "endereço": "Estrada do Rufino, 1.059",
+        "bairro": "Serraria",
+        "cidade": "Diadema",
+        "cep": "09980-280",
+        "sabado": "* Aberto aos Sábados"
+    },
+    {
+        "nome": "Ecoponto Yamagata",
+        "endereço": "Rua Yamagata c/ Rua Osaka, s/nº",
+        "bairro": "Jardim Canhema",
+        "cidade": "Diadema",
+        "cep": "09940-220",
+        "sabado": "* Aberto aos Sábados"
+    },
+    {
+        "nome": "Ecoponto João Batista (Vila Nogueira)",
+        "endereço": "Rua João Batista Alves do Nascimento, 546",
+        "bairro": "Vila Nogueira",
+        "cidade": "Diadema",
+        "cep": "04905-020",
+        "sabado": "* Aberto aos Sábados"
+    },
+    {
+        "nome": "Ecoponto DLU",
+        "endereço": "Avenida Pirâmide, 844",
+        "bairro": "Jardim Inamar",
+        "cidade": "Diadema",
+        "cep": "09970-330",
+        "sabado": "* Aberto aos Sábados"
+    },
+    {
+        "nome": "Ecoponto Caracas",
+        "endereço": "Rua Caracas, 120",
+        "bairro": "Vila Mulford",
+        "cidade": "Diadema",
+        "cep": "09921-000"
+    },
+    {
+        "nome": "Ecoponto Nova Conquista",
+        "endereço": "Travessa ETCD, 210 – Vila Nova Conquista",
+        "bairro": "Piraporinha",
+        "cidade": "Diadema",
+        "cep": "09950690"
+    },
+    {
+        "nome": "Ecoponto Okavango – Casa Grande",
+        "endereço": "Avenida Casa Grande, 1810",
+        "bairro": "Jardim Casa Grande",
+        "cidade": "Diadema",
+        "cep": "09960-590"
+    },
+    {
+        "nome": "Ecoponto Maria Leonor – Parque Reid / Campanário",
+        "endereço": "Avenida Maria Leonor",
+        "bairro": "Campanário",
+        "cidade": "Diadema",
+        "cep": "09920-080"
+    }
+    ]
