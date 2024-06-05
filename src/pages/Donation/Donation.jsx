@@ -5,6 +5,7 @@ import './Donation.css';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import Loading from '../../components/Loading/Loading.jsx';
+import DeleteButton from '../../components/DeleteButton/DeleteBotton.jsx'
 
 function Donation() {
   const [doacoes, setDoacoes] = useState([]);
@@ -51,7 +52,7 @@ function Donation() {
         <div className='product-container'>
           {doacoes.map(doacao => (
             <div key={doacao.id} className='product-card'>
-               {localStorage.getItem('id') === "id do ADMIN" && <xButton />} {/*----------adicionar aqui o ID do admin-----------------*/}
+               {localStorage.getItem('id') === "665b8ab700c45758228ec303" && <DeleteButton />} {/*----------adicionar aqui o ID do admin-----------------*/}
               <NavLink to={`/Prod_Detalhes/${doacao.id}`}>
                 <div className="image-wrapper">
                 {doacao.imagensBase64.map((base64, index) => (

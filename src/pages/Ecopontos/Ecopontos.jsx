@@ -5,6 +5,7 @@ import './Ecopontos.css';
 import { NavLink } from 'react-router-dom';
 import FloatingButton from '../../components/FloatingButton/FloatingButton.jsx';
 import Footer from '../../components/Footer/Footer.jsx';
+import DeleteButton from '../../components/DeleteButton/DeleteBotton.jsx'
 
 function Ecopontos() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -44,7 +45,7 @@ function Ecopontos() {
                 <div className='product-container'>
                     {pontos.map(ponto => (
                         <div className='product-card' key={ponto.id}>
-                            {localStorage.getItem('id') ==="id do ADMIN" && <xButton />}
+                            {localStorage.getItem('id') ==="665b8ab700c45758228ec303" && <DeleteButton />}
                             <h2>{ponto.nomePonto}</h2>
                             <br></br>
                             <h3>Endereço:</h3>

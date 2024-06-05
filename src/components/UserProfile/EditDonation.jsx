@@ -168,34 +168,8 @@ const EditDonation = () => {
               />
             </div>
 
-            <div className="EditForm-forms-form-group">
-              <label className="form-label-editDonation">Imagens:</label>
-              <input
-                type="file"
-                accept="image/*"
-                multiple
-                className="form-control"
-                onChange={handleImageChange}
-              />
-            </div>
-
-            <div className="EditForm-forms-form-group">
-              <label className="form-label-editDonation">Imagens Existentes:</label>
-              <div className="existing-images">
-                {doacao.imageUrls &&
-                  doacao.imageUrls.map((url, index) => (
-                    <img
-                      key={index}
-                      src={url}
-                      alt={`Imagem ${index + 1}`}
-                      className="img-thumbnail m-2"
-                    />
-                  ))}
-              </div>
-            </div>
-
             <div className="ProductForm-forms-image-container">
-              <label className="form-label-editDonation">Novas Imagens:</label>
+              <label className="form-label-editDonation">Imagens:</label>
               <div className="ProductForm-forms-image-preview">
                 {doacao.imagensBase64.map((base64, index) => (
                   <img
@@ -213,6 +187,13 @@ const EditDonation = () => {
               onClick={handleSave}
             >
               Salvar
+            </button>
+            <button
+              type="button"
+              className="ProductForm-forms-submit-btn"
+              onClick={handleDelete}
+            >
+              Já Doei!
             </button>
           </form>
         </div>
