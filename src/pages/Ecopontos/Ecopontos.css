@@ -3,15 +3,20 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  background-color: #DCDDDE;
+
   padding: 0;
   padding-top: 1.7vh;
   padding-bottom: 50px;
 }
 
+.fora-app{
+  background-color: #ffffffec;
+}
+
 .app {
   max-width: 100%;
-  background-color: #DCDDDE;
+  background-image: url(../../img/background.avif);
+  background-size: contain, cover;
 }
 
 @keyframes slideIn {

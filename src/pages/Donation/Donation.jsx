@@ -5,12 +5,20 @@ import './Donation.css';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import Loading from '../../components/Loading/Loading.jsx';
-import DeleteButton from '../../components/DeleteButton/DeleteBotton.jsx'
+import DeleteButton from '../../components/DeleteButton/DeleteBotton.jsx';
 
 function Donation() {
   const [doacoes, setDoacoes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const id = localStorage.getItem("id");
+    if (id !== null) {
+      setIsLoggedIn(true);
+    }
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -46,30 +54,33 @@ function Donation() {
           <h1 className="titles">Central de Doações</h1>
           <p>Aqui você encontrará o que precisa</p>
         </div>
-        <NavLink to="/ProductForm" className="newDonation">
-          <i className="fab fa-plus"></i> Nova Doação
-        </NavLink>
+        {isLoggedIn && (
+          <NavLink to="/ProductForm" className="newDonation">
+            <i className="fab fa-plus"></i> Nova Doação
+          </NavLink>
+        )}
         <div className='product-container'>
           {doacoes.map(doacao => (
             <div key={doacao.id} className='product-card'>
-               {localStorage.getItem('id') === "665b8ab700c45758228ec303" && <DeleteButton />} {/*----------adicionar aqui o ID do admin-----------------*/}
+              {isLoggedIn && localStorage.getItem('id') === "665b8ab700c45758228ec303" && <DeleteButton id={doacao.id} />} {/* Adicionado verificação de isLoggedIn */}
               <NavLink to={`/Prod_Detalhes/${doacao.id}`}>
                 <div className="image-wrapper">
-                {doacao.imagensBase64.map((base64, index) => (
-                      <img
-                        key={index}
-                        src={base64}
-                        alt={`Nova Imagem ${index + 1}`}
-                        className="edit-donation-img-thumbnail"
-                      />
-                    ))}
+                  {doacao.imagensBase64.map((base64, index) => (
+                    <img
+                      key={index}
+                      src={base64}
+                      alt={`Nova Imagem ${index + 1}`}
+                      className="edit-donation-img-thumbnail"
+                    />
+                  ))}
                 </div>
               </NavLink>
               <h2>{doacao.titulo}</h2>
-              <p>{doacao.condicao}
-                        <br/>
-                    Quantidade:
-                {doacao.quantidade}</p>
+              <p>
+                {doacao.condicao}
+                <br />
+                Quantidade: {doacao.quantidade}
+              </p>
               <NavLink to={`/Prod_Detalhes/${doacao.id}`} className='NavLink'>Detalhes</NavLink>
             </div>
           ))}

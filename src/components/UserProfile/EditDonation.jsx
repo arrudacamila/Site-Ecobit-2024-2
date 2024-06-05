@@ -145,7 +145,9 @@ const EditDonation = () => {
                 </select>
               </div>
               <div className="EditForm-forms-input-field-container">
-                <label className="form-label-editDonation">Disponibilidade:</label>
+                <label className="form-label-editDonation">
+                  Disponibilidade:
+                </label>
                 <select
                   className=""
                   name="disponibilidade"
@@ -181,6 +183,7 @@ const EditDonation = () => {
                 ))}
               </div>
             </div>
+
             <button
               type="button"
               className="ProductForm-forms-submit-btn"
@@ -188,13 +191,13 @@ const EditDonation = () => {
             >
               Salvar
             </button>
-            <button
+            {/* <button
               type="button"
               className="ProductForm-forms-submit-btn"
               onClick={handleDelete}
             >
               Já Doei!
-            </button>
+            </button> */}
           </form>
         </div>
       </div>

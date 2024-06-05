@@ -165,8 +165,6 @@ function Register() {
                     )}
                 </div>
             </div>
-            {/* {message && <div className="message">{message}</div>}
-            {error && <div className="error">{error}</div>} */}
             <Footer />
         </div>
     );

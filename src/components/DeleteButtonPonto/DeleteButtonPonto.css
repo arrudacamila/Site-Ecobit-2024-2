@@ -1,6 +1,10 @@
 /* FloatingButton.css */
-.delete-button {
-    position: fixed;
+.delete-button-ponto-container {
+    position: relative; /* Adiciona isso para tornar o container de referência */
+  }
+  
+  .delete-button-ponto {
+    position: absolute; /* Alterado para absolute */
     top: 20px;
     right: 20px;
     width: 50px;
@@ -18,12 +22,11 @@
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .delete-button:hover {
+  .delete-button-ponto:hover {
     background-color: darkred;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
   }
-  
-  .produto-delete-button-modal{
+.ecoponto-delete-button-modal{
     background-color: #2D6B51;
     color: #fff;
     font-size: 12px;
@@ -37,6 +40,6 @@
     cursor: pointer;
 }
 
-.ponto-delete-button-modal:hover{
+.ecoponto-delete-button-modal:hover{
     background-color: #429975;
 }

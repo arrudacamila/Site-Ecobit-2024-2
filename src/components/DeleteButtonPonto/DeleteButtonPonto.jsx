@@ -1,5 +1,5 @@
 import React from "react";
-import "./DeleteButton.css";
+import "./DeleteButtonPonto.css";
 import { useState } from 'react'
 import { FaCheckCircle } from 'react-icons/fa'; // Importe o ícone, se necessário
 
@@ -12,7 +12,7 @@ const DeleteButton = ({ id }) => {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/deleteDoa/${id}`, {
+      const response = await fetch(`http://localhost:8080/deletePonto/${id}`, {
         method: "DELETE",
       });
       if (response.ok) {
@@ -29,15 +29,15 @@ const DeleteButton = ({ id }) => {
 
   return (
     <div>
-      <button className="delete-button" onClick={handleDelete}>
+      <button className="delete-button-ponto" onClick={handleDelete}>
         X
       </button>
       {showConfirmationModal && (
         <div className="EcopontoForm-modal active">
           <div className="EcopontoForm-modal-content">
             <FaCheckCircle className="EcopontoForm-modal-icon" />
-            <p>Produto Deletado com sucesso</p>
-            <button className="produto-delete-button-modal" onClick={handleRefresh}>Fechar</button>
+            <p>Ponto Deletado com sucesso</p>
+            <button className="ecoponto-delete-button-modal" onClick={handleRefresh}>Fechar</button>
           </div>
         </div>
       )}

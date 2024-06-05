@@ -10,6 +10,7 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    margin-bottom: 5vh;
 }
 
 .eco-header {
@@ -29,6 +30,7 @@
     animation: slideIn 1.5s ease-out;
     /* Animação de deslize e surgimento */
     color: #fff;
+    padding-top: 45px;
 }
 
 #eco_name {

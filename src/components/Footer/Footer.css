@@ -10,11 +10,11 @@
 }
 
 .footer-content {
+   margin-left: -10px;
    display: flex;
    flex-direction: row;
    align-items: center;
-   gap: 20px; /* Espaço entre os elementos */
-   justify-content: space-around;
+   justify-content: space-between;
 }
 
 .footer-section {
@@ -61,6 +61,7 @@
 .footer-bottom {
    text-align: center;
    border-top: 1px solid #cccccc;
+   margin-top: 10px;
 }
 
 .footer-bottom p {

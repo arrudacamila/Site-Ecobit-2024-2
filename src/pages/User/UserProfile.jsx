@@ -8,7 +8,6 @@ import ChangePassword from '../../components/UserProfile/ChangePassword';
 import YourOrders from '../../components/UserProfile/UserDonations';
 import UserAddress from '../../components/UserProfile/UserAddress';
 import LegalNotice from '../../components/UserProfile/LegalNotice';
-import FloatingButton from '../../components/FloatingButton/FloatingButton';
 import Footer from '../../components/Footer/Footer.jsx';
 
 const UserProfile = () => {
@@ -30,7 +29,6 @@ const UserProfile = () => {
             {activepage === 'legalnotice' && <LegalNotice />}
           </div>
         </div>
-        <FloatingButton />
       </div>
       <Footer />
     </div>
