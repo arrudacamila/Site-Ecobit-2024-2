@@ -1,12 +1,12 @@
 .custom-navbar {
-  background-color: #F5F6F8;
+  background-color: #f2f2f2;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 9999;
   transition: all 0.3s ease;
   padding: 20px 0;
-  box-shadow: 0px 4px 13px -2px #000000;
+  
 }
 
 .custom-navbar .navbar-container {

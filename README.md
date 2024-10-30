@@ -15,3 +15,4 @@ Busca de itens: Permitir que usuários busquem por itens específicos, filtrando
 Mapa interativo: Exibir a localização dos doadores e facilitar o contato entre doadores e beneficiários.
 Chat: Proporcionar um canal de comunicação direta entre usuários para agendar a entrega ou retirada dos itens.
 Gestão de doações: Permitir que administradores gerenciem os anúncios, aprovem doações e monitorem a atividade da plataforma.
+Implementações futuras no Android.

@@ -7,10 +7,11 @@ import EditDonation from "./components/UserProfile/EditDonation";
 import UserDonations from "./components/UserProfile/UserDonations";
 import Eco_Detalhes from "./pages/Eco_Detalhes/Eco_Detalhes";
 import ProductForm from "./pages/ProductForm/ProductForm";
-import Register from "./pages/Register/Register"
+import Register from "./pages/Register/Register";
 import Ecopontos from "./pages/Ecopontos/Ecopontos";
 import Prod_Detalhes from "./pages/Prod_Detalhes/Prod_Detalhes";
 import EcopontoForm from "./pages/EcopontoForm/EcopontoForm";
+import Chat from "./pages/Chat/Chat"; 
 
 function AppRoutes() {
     return (
@@ -26,8 +27,9 @@ function AppRoutes() {
                 <Route path="/ProductForm" element={<ProductForm />} />
                 <Route path="/Register" element={<Register />} />
                 <Route path="/Ecopontos" element={<Ecopontos />} />
-                <Route path="/Prod_Detalhes/:id" element={<Prod_Detalhes />} /> {/* Update route with dynamic parameter */}
+                <Route path="/Prod_Detalhes/:id" element={<Prod_Detalhes />} />
                 <Route path="/EcopontoForm" element={<EcopontoForm />} />
+                <Route path="/Chat" element={<Chat />} /> 
             </Routes>
         </BrowserRouter>
     );
